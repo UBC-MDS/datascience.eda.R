@@ -18,6 +18,10 @@ If you’ve found a bug, please file an issue that illustrates the bug with a mi
 
 ### Pull request process
 
+The core development team of this project follows `Github flow <https://guides.github.com/introduction/flow>`_. For any new changes, we will work on a new branch, once it is ready, we will create a pull request, request approval from other team members and when things are ready, the pull request will be merged by one of the members.
+
+All other contributers can follow the steps below to contribute to the project:
+
 *   Fork the package and clone onto your computer. If you haven't done this before, we recommend using `usethis::create_from_github("UBC-MDS/datascience.eda.R", fork = TRUE)`.
 
 *   Install all development dependences with `devtools::install_dev_deps()`, and then make sure the package passes R CMD check by running `devtools::check()`. 
