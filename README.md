@@ -14,11 +14,11 @@ categorical columns and text columns; it will also conduct several
 experimental clusterings on the dataset.
 
 Our functions are tailored based on our own experience, there are also
-similar packages published, a few good ones worth mentioning: -
-[EDA](https://cran.r-project.org/web/packages/dlookr/vignettes/EDA.html)
--
-[SmartEDA](https://cran.r-project.org/web/packages/SmartEDA/vignettes/SmartEDA.html)
-- [DataExplorer](https://github.com/boxuancui/DataExplorer)
+similar packages published, a few good ones worth mentioning:
+
+-   [EDA](https://cran.r-project.org/web/packages/dlookr/vignettes/EDA.html)
+-   [SmartEDA](https://cran.r-project.org/web/packages/SmartEDA/vignettes/SmartEDA.html)
+-   [DataExplorer](https://github.com/boxuancui/DataExplorer)
 
 ## Main functions
 
