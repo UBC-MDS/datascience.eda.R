@@ -20,6 +20,11 @@ knitr::opts_chunk$set(
 
 This package includes functions assisting data scientists with various common tasks during the exploratory data analysis stage of a data science project. Its functions will help the data scientist to do preliminary analysis on common column types like numeric columns, categorical columns and text columns; it will also conduct several experimental clusterings on the dataset.
 
+Our functions are tailored based on our own experience, there are also similar packages published, a few good ones worth mentioning:
+- [EDA](https://cran.r-project.org/web/packages/dlookr/vignettes/EDA.html)
+- [SmartEDA](https://cran.r-project.org/web/packages/SmartEDA/vignettes/SmartEDA.html)
+- [DataExplorer](https://github.com/boxuancui/DataExplorer)
+
 ## Main functions
 - `explore_numeric_columns`: conducts common exploratory analysis on columns with numeric type: it generates a heatmap showing correlation coefficients (using `pearson`, `kendall` or `spearman` correlation on choice), histograms and SPLOM plots for all numeric columns or a list of columns specified by the user. This returns a list of plot objects so that the user can save and use them later on.
 
