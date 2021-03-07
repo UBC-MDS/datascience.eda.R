@@ -9,9 +9,11 @@
 #' @param text_cols vector of numeric column names
 #'
 #' @return a list of plots
-#' @export
 #'
 #' @examples
+#' \dontrun{
+#' explore_text_columns(df)
+#' }
 explore_text_columns <- function(df, text_cols=NULL){
 
 }

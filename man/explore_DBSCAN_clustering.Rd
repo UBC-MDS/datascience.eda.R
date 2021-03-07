@@ -24,8 +24,13 @@ explore_DBSCAN_clustering(
 \item{weights}{number: weights for the data points. Only needed to perform weighted clustering.}
 }
 \value{
-
+a list of plots
 }
 \description{
 fit and plot DBSCAN clustering on numeric columns of the dataset
+}
+\examples{
+\dontrun{
+explore_DBSCAN_clustering(df)
+}
 }

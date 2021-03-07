@@ -15,7 +15,7 @@ explore_KMeans_clustering(
 \arguments{
 \item{df}{dataframe}
 
-\item{num_cols}{vector of numeric column names}
+\item{num_cols}{vector of numeric column names, default to NULL, all numeric columns will be used}
 
 \item{centers}{vector of number of clusters}
 
@@ -24,8 +24,13 @@ explore_KMeans_clustering(
 \item{algorithm}{character: may be abbreviated. Note that "Lloyd" and "Forgy" are alternative names for one algorithm}
 }
 \value{
-
+a list of plots
 }
 \description{
 fits and plots KMeans clusterings on numeric columns of the dataset
+}
+\examples{
+\dontrun{
+explore_KMeans_clustering(df)
+}
 }

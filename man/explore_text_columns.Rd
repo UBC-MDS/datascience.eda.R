@@ -31,3 +31,8 @@ Performs EDA of text features
 \item plots the word cloud
 }
 }
+\examples{
+\dontrun{
+explore_text_columns(df)
+}
+}
