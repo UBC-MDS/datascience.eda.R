@@ -8,6 +8,9 @@
 #' @return a list of plot objects generated created by the function
 #'
 #' @examples
+#' \dontrun{
+#' explore_numeric_columns(df)
+#' }
 explore_numeric_columns <- function(df, hist_cols=NULL, pairplot_cols=NULL, corr_method='pearson'){
 
 }

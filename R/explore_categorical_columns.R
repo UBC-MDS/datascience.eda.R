@@ -11,7 +11,10 @@
 #' @return A data frame with details about unique, null values and most frequent category in every column and a vector containing plots
 #' @export
 #' @examples
+#' \dontrun{
 #' explore_categorical_columns(X, c('col1', 'col2'))
+#' }
+
 
 explore_categorical_columns <- function(df, categorical_col) {
   print('')
