@@ -16,9 +16,7 @@ explore_text_columns(df, text_cols = NULL)
 \arguments{
 \item{df}{dataframe: dataset}
 
-\item{num_cols}{vector of numeric column names}
-
-\item{eps}{vector of the epsilon neighborhood size}
+\item{text_cols}{vector of numeric column names}
 }
 \value{
 a list of plots
@@ -32,7 +30,4 @@ Performs EDA of text features
 \item plots the distribution of word count
 \item plots the word cloud
 }
-}
-\examples{
-explore_text_columns(data_df)
 }

@@ -6,14 +6,12 @@
 #' - plots the word cloud
 #'
 #' @param df dataframe: dataset
-#' @param num_cols vector of numeric column names
-#' @param eps vector of the epsilon neighborhood size
+#' @param text_cols vector of numeric column names
 #'
 #' @return a list of plots
 #' @export
 #'
 #' @examples
-#' explore_text_columns(data_df)
 explore_text_columns <- function(df, text_cols=NULL){
 
 }
