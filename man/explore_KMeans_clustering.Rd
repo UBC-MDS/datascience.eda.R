@@ -6,16 +6,13 @@
 \usage{
 explore_KMeans_clustering(
   df,
-  num_cols = NULL,
-  centers,
+  centers = seq(from = 2, to = 10),
   iter.max = 10,
   algorithm = c("Hartigan-Wong", "Lloyd", "Forgy", "MacQueen")
 )
 }
 \arguments{
 \item{df}{dataframe}
-
-\item{num_cols}{vector of numeric column names, default to NULL, all numeric columns will be used}
 
 \item{centers}{vector of number of clusters}
 
@@ -30,7 +27,6 @@ a list of plots
 fits and plots KMeans clusterings on numeric columns of the dataset
 }
 \examples{
-\dontrun{
-explore_KMeans_clustering(df)
-}
+library(palmerpenguins)
+explore_KMeans_clustering(penguins)
 }

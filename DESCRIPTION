@@ -33,4 +33,10 @@ Suggests:
 Config/testthat/edition: 2
 Imports: 
     stats,
-    dbscan
+    dbscan,
+    dplyr,
+    imputeR,
+    graphics,
+    ggbiplot
+Depends: 
+    tidyverse
