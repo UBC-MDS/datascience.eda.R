@@ -1,4 +1,4 @@
-test_that("KMeans - default parameters work correctly", {
+test_that("explore_KMeans_clustering - default parameters work correctly", {
   df <- create_test_data()
   results <- explore_KMeans_clustering(df)
   expect_equal(length(results), 9)
@@ -10,7 +10,7 @@ test_that("KMeans - default parameters work correctly", {
 })
 
 
-test_that("KMeans - invalid parameters work correctly", {
+test_that("explore_KMeans_clustering - invalid parameters work correctly", {
   df <- create_test_data()
 
   # there is no numeric columns
@@ -24,9 +24,12 @@ test_that("KMeans - invalid parameters work correctly", {
 
   # invalid algorithm
   expect_error(explore_KMeans_clustering(df, algorithm = "test"))
+
+  # invalid iter.max
+  expect_error(explore_KMeans_clustering(df, iter.max = 3.2))
 })
 
-test_that("KMeans - custom parameters work correctly", {
+test_that("explore_KMeans_clustering - custom parameters work correctly", {
   df <- create_test_data()
   centers = seq(3, 5)
   results <- explore_KMeans_clustering(df, centers = centers, iter.max = 15,

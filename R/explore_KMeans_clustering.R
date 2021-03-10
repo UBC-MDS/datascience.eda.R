@@ -1,24 +1,21 @@
 #' fits and plots KMeans clusterings on numeric columns of the dataset
 #'
-#' @param df dataframe
-#' @param centers vector of number of clusters
-#' @param iter.max integer: max number of iteration
-#' @param algorithm character: may be abbreviated. Note that "Lloyd" and "Forgy" are alternative names for one algorithm
+#' @param df data frame: the original dataset
+#' @param centers vector of number of clusters, optional, default to seq(from = 2, to = 10)
+#' @param iter.max integer: max number of iteration, optional, default to 10
+#' @param algorithm character: may be abbreviated, optional, default to "Lloyd". Note that "Lloyd" and "Forgy" are alternative names for one algorithm
 #'
 #' @return a list of plots
+#' @export
 #'
 #' @examples
-#' \dontrun{
 #' library(palmerpenguins)
 #' explore_KMeans_clustering(penguins)
-#' }
-
 explore_KMeans_clustering <-
   function(df,
            centers = seq(from = 2, to = 10),
            iter.max = 10,
-           algorithm = c("Hartigan-Wong", "Lloyd", "Forgy",
-                         "MacQueen"))
+           algorithm = c("Lloyd"))
   {
     numeric_cols <-  dplyr::select_if(df, is.numeric)
 
@@ -39,8 +36,8 @@ explore_KMeans_clustering <-
     }
 
 
-    # if (!is.numeric(iter.max) | !all.equal(iter.max, as.integer(iter.max)) | iter.max<1)
-    #   stop("Invalid value for iter.max.")
+    if (!is.numeric(iter.max) | iter.max!=as.integer(iter.max) | iter.max<1)
+      stop("Invalid value for iter.max.")
 
     # scale and impute the dataset before applying KMeans
     numeric_cols <- imputeR::guess(numeric_cols)
