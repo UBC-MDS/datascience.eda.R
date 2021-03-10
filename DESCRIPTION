@@ -37,6 +37,6 @@ Imports:
     dplyr,
     imputeR,
     graphics,
-    ggbiplot
-Depends: 
-    tidyverse
+    ggbiplot,
+    ggplot2,
+    palmerpenguins

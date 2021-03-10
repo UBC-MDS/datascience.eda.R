@@ -2,4 +2,3 @@
 
 export(explore_DBSCAN_clustering)
 export(explore_categorical_columns)
-export(get_numeric_columns)

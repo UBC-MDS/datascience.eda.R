@@ -5,8 +5,7 @@ test_that("KMeans - default parameters work correctly", {
   centers <- seq(2, 10)
   for (i in seq_along(centers)) {
     p <- results[[i]]
-    expect_equal(p$labels$title, paste0("PCA Plot - KMeans with", centers[i]," centers"))
-    expect_equal(nlevels(p$data$groups), centers[i])
+    verify_KMeans_plot(p, centers[i])
   }
 })
 
@@ -29,6 +28,13 @@ test_that("KMeans - invalid parameters work correctly", {
 
 test_that("KMeans - custom parameters work correctly", {
   df <- create_test_data()
-  results <- explore_KMeans_clustering(df, seq(3, 5), iter.max = 15,
+  centers = seq(3, 5)
+  results <- explore_KMeans_clustering(df, centers = centers, iter.max = 15,
                             algorithm = "Lloyd")
+  expect_equal(length(results), length(centers))
+
+  for (i in seq_along(centers)) {
+    p <- results[[i]]
+    verify_KMeans_plot(p, centers[i])
+  }
 })

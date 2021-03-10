@@ -27,6 +27,8 @@ a list of plots
 fits and plots KMeans clusterings on numeric columns of the dataset
 }
 \examples{
+\dontrun{
 library(palmerpenguins)
 explore_KMeans_clustering(penguins)
+}
 }

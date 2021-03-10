@@ -29,19 +29,18 @@ explore_KMeans_clustering <-
     if (!is.numeric(centers))
       stop("Centers must be a numeric vector.")
 
-    if (is.vector(centers))
-      for (c in centers)
-        if (c<1)
-          stop("Centers must be >= 1.")
-    else
-      if (centers<1)
+    for (c in centers)
+      if (c<1)
         stop("Centers must be >= 1.")
 
-    if (!algorithm %in% c("Hartigan-Wong", "Lloyd", "Forgy", "MacQueen"))
-      stop("Invalid value for algorithm.")
+    for (a in algorithm){
+      if (!(a %in% c("Hartigan-Wong", "Lloyd", "Forgy", "MacQueen")))
+        stop("Invalid value for algorithm.")
+    }
 
-    if (!is.numeric(iter.max) | !all.equal(iter.max, as.integer(iter.max)) | iter.max<1)
-      stop("Invalid value for iter.max.")
+
+    # if (!is.numeric(iter.max) | !all.equal(iter.max, as.integer(iter.max)) | iter.max<1)
+    #   stop("Invalid value for iter.max.")
 
     # scale and impute the dataset before applying KMeans
     numeric_cols <- imputeR::guess(numeric_cols)
@@ -49,16 +48,16 @@ explore_KMeans_clustering <-
 
     N = length(centers)
     results <- vector("list", N)
-    pca = prcomp(numeric_cols, scale=FALSE)
+    pca = stats::prcomp(numeric_cols, scale=FALSE)
     for (i in seq_along(centers)) {
-      cl = kmeans(numeric_cols, centers = centers[i], algorithm = algorithm)
+      cl = stats::kmeans(numeric_cols, centers = centers[i], algorithm = algorithm, iter.max = iter.max)
       results[[i]] = (ggbiplot::ggbiplot(
         pca,
         groups = as.factor(cl$cluster),
         choices = c(1, 2),
         ellipse = TRUE,
         var.axes = FALSE
-      ) + ggtitle(paste0("PCA Plot - KMeans with", centers[i]," centers")))
+      ) + ggplot2::ggtitle(paste0("PCA Plot - KMeans with", centers[i]," centers")))
     }
     results
   }
