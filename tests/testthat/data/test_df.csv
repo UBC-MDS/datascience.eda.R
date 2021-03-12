@@ -1,0 +1,12 @@
+"column_name","unique_items","no_of_nulls","percentage_missing"
+"BsmtExposure","No, Gd, Mn, Av, NA",38,2.603
+"BsmtQual","Gd, TA, Ex, NA, Fa",37,2.534
+"BsmtCond","TA, Gd, NA, Fa, Po",37,2.534
+"BsmtFinType1","GLQ, ALQ, Unf, Rec, BLQ, NA, LwQ",37,2.534
+"MasVnrType","BrkFace, None, Stone, BrkCmn, NA",8,0.548
+"Neighborhood","CollgCr, Veenker, Crawfor, NoRidge, Mitchel, Somerst, NWAmes, OldTown, BrkSide, Sawyer, NridgHt, NAmes, SawyerW, IDOTRR, MeadowV, Edwards, Timber, Gilbert, StoneBr, ClearCr, NPkVill, Blmngtn, BrDale, SWISU, Blueste",0,0
+"Exterior1st","VinylSd, MetalSd, Wd Sdng, HdBoard, BrkFace, WdShing, CemntBd, Plywood, AsbShng, Stucco, BrkComm, AsphShn, Stone, ImStucc, CBlock",0,0
+"Exterior2nd","VinylSd, MetalSd, Wd Shng, HdBoard, Plywood, Wd Sdng, CmentBd, BrkFace, Stucco, AsbShng, Brk Cmn, ImStucc, AsphShn, Stone, Other, CBlock",0,0
+"ExterQual","Gd, TA, Ex, Fa",0,0
+"ExterCond","TA, Gd, Fa, Po, Ex",0,0
+"Foundation","PConc, CBlock, BrkTil, Wood, Slab, Stone",0,0
