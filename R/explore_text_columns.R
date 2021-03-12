@@ -158,6 +158,36 @@ explore_text_columns <- function(df, text_cols=list()) {
 
     print(results[[length(results)]])
 
+    cat("\n")
+    cat("\n")
+    cat("#### Word Cloud of text (after removing stopwords) in \"",col,"\":", sep = "")
+    cat("\n")
+
+    text <- df %>%
+      dplyr::pull(!!sym(col))
+
+    corpus <- tm::Corpus(tm::VectorSource(text))
+    docs <- corpus %>%
+      tm::tm_map(tm::removeNumbers) %>%
+      tm::tm_map(tm::removePunctuation) %>%
+      tm::tm_map(tm::stripWhitespace) %>%
+      tm::tm_map(tm::content_transformer(tolower)) %>%
+      tm::tm_map(tm::removeWords, tm::stopwords("english"))
+
+    dtm <- tm::TermDocumentMatrix(docs)
+    matrix <- as.matrix(dtm)
+    words <- sort(rowSums(matrix),decreasing=TRUE)
+
+    word_cloud_df <- data.frame(word = names(words), freq=words)
+
+    set.seed(1)
+    wordcloud::wordcloud(words = word_cloud_df$word, freq = word_cloud_df$freq,
+                         min.freq = 1,max.words=200,
+                         random.order=FALSE, rot.per=0.35,
+                         colors=RColorBrewer::brewer.pal(8, "Dark2"))
+
+    results[[length(results)+1]] <- word_cloud_df
+
   }
 
   results
