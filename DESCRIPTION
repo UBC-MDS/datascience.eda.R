@@ -39,4 +39,15 @@ Imports:
     graphics,
     ggbiplot,
     ggplot2,
-    palmerpenguins
+    palmerpenguins,
+    ggplot2,
+    NLP,
+    RColorBrewer,
+    tidyverse,
+    tm,
+    wordcloud,
+    vdiffr,
+    stringr,
+    sacred (>= 0.1.0)
+Remotes:  
+    git@github.com:JohnCoene/sacred.git
