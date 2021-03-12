@@ -1,7 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# datascience.eda
+datascience.eda
+===============
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -20,7 +21,8 @@ similar packages published, a few good ones worth mentioning:
 -   [SmartEDA](https://cran.r-project.org/web/packages/SmartEDA/vignettes/SmartEDA.html)
 -   [DataExplorer](https://github.com/boxuancui/DataExplorer)
 
-## Main functions
+Main functions
+--------------
 
 -   `explore_numeric_columns`: conducts common exploratory analysis on
     columns with numeric type: it generates a heatmap showing
@@ -38,12 +40,13 @@ similar packages published, a few good ones worth mentioning:
     of choice.
 
 -   `explore_text_columns`: performs exploratory data analysis of text
-    features. It prints the summary statistics of character length and
-    word count. It also plots the word cloud, distributions of character
-    lengths, word count and polarity and subjectivity scores. Bar charts
-    of top n stopwords and top n words other than stopwords, top n
-    bigrams, sentiments, name entities and part of speech tags will be
-    visualized as well. This returns a list of plot objects.
+    features. If text feature columns are not specified, the function
+    will try to identify the text features. The function prints the
+    summary statistics of character length and word count, and plots a
+    histogram of its distributions. It also plots the word cloud of
+    words (after removing stopwords) and bi-grams. Bar charts of top 10
+    words (after removing stopwords) and top 10 bi-grams will be plotted
+    as well. This function returns a list of all the results.
 
 -   `explore_clustering`: fits K-Means and DBSCAN clustering algorithms
     on the dataset and visualizes the clustering using scatterplots. It
@@ -59,18 +62,16 @@ similar packages published, a few good ones worth mentioning:
     the dataset and visualizes the clustering using scatterplots. It
     returns a list of plots.
 
-## Installation
+Installation
+------------
 
 You can install the development version of datascience.eda with:
 
-``` r
-# install.packages("devtools")
-devtools::install_github("UBC-MDS/datascience.eda.R")
-```
+    # install.packages("devtools")
+    devtools::install_github("UBC-MDS/datascience.eda.R")
 
-## Example
+Example
+-------
 
-``` r
-library(datascience.eda)
-## basic example code
-```
+    library(datascience.eda)
+    ## basic example code

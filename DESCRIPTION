@@ -33,4 +33,16 @@ Suggests:
 Config/testthat/edition: 2
 Imports: 
     stats,
-    dbscan
+    dbscan,
+    dplyr,
+    ggplot2,
+    NLP,
+    RColorBrewer,
+    tidyverse,
+    tm,
+    wordcloud,
+    vdiffr,
+    stringr,
+    sacred (>= 0.1.0)
+Remotes:  
+    git@github.com:JohnCoene/sacred.git
