@@ -89,6 +89,18 @@ explore_text_columns <- function(df, text_cols=list()) {
     results <- append(results, max_char_text)
     results <- append(results, min_char_text)
 
+    cat("\n")
+    cat("#### Histogram of number of characters in \"",col,"\":", sep = "")
+    cat("\n")
+
+    results[[length(results)+1]] <- df %>%
+      dplyr::mutate(char_len = str_length(!!sym(col))) %>%
+      ggplot2::ggplot(aes(x=char_len)) +
+      ggplot2::geom_histogram(bins = 30) +
+      ggplot2::theme_bw() +
+      ggplot2::xlab(paste0("Number of characters in \"",col,"\""))
+
+    print(results[[length(results)]])
 
   }
 
