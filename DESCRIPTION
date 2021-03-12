@@ -33,4 +33,14 @@ Suggests:
 Config/testthat/edition: 2
 Imports: 
     stats,
-    dbscan
+    dbscan,
+    dplyr,
+    ggplot2,
+    NLP,
+    RColorBrewer,
+    tidyverse,
+    tm,
+    wordcloud,
+    vdiffr,
+    stringr
+    

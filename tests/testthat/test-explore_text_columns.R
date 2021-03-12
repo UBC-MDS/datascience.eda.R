@@ -1,4 +1,5 @@
-library(tidyverse)
+require(tidyverse)
+require(vdiffr)
 
 test_that("multiplication works", {
 
@@ -28,10 +29,10 @@ test_that("multiplication works", {
   expect_equal(results[[16]], df$sms[1086])
   vdiffr::expect_doppelganger("Word_count_Plot", results[[17]])
   expect_equal(results[[18]]$word[1:5], c('call','now','can','get','will'))
-  expect_equal(results[[18]]$freq[1:5], c(578, 479, 405, 390, 378))
+  expect_equal(results[[18]]$frequen[1:5], c(578, 479, 405, 390, 378))
   vdiffr::expect_doppelganger("Word_count_bar", results[[19]])
   expect_equal(results[[20]]$word[1:5], c('are you','i am','have a','you are','you have'))
-  expect_equal(results[[20]]$freq[1:5], c(151, 133, 129, 123, 114))
+  expect_equal(results[[20]]$frequen[1:5], c(151, 133, 129, 123, 114))
   vdiffr::expect_doppelganger("Bigram_count_bar", results[[21]])
 
 })

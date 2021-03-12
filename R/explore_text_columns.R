@@ -5,20 +5,22 @@
 #' - plots the distribution of word count
 #' - plots the word cloud
 #'
+#' @importFrom dplyr %>%
+#'
 #' @param df dataframe: dataset
 #' @param text_cols vector of numeric column names
 #'
-#' @return a list of plots
+#' @return a list of results and plots
+#' @export
 #'
 #' @examples
-#' \dontrun{
-#' explore_text_columns(df)
-#' }
+#' explore_text_columns(cars)
 explore_text_columns <- function(df, text_cols=list()) {
 
-  for (col in text_cols){
+  results <- list()
+  word_count <- frequen <- NULL
 
-    results <- list()
+  for (col in text_cols){
 
     cat("## Exploratory Data Analysis of \"",col,"\" column:", sep = "")
     cat("\n")
@@ -26,11 +28,11 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("\n")
 
     char_len <- df %>%
-      dplyr::mutate(char_len = str_length(!!sym(col))) %>%
+      dplyr::mutate(char_len = stringr::str_length(!!dplyr::sym(col))) %>%
       dplyr::pull(char_len)
 
     mean_char_len <- round(mean(char_len), 2)
-    median_char_len <- round(median(char_len), 2)
+    median_char_len <- round(stats::median(char_len), 2)
 
     cat("- The average character length of text is:",mean_char_len)
     cat("\n")
@@ -43,11 +45,11 @@ explore_text_columns <- function(df, text_cols=list()) {
     results <- append(results, median_char_len)
 
     max_char <- df %>%
-      dplyr::mutate(char_len = str_length(!!sym(col))) %>%
-      filter(char_len == max(char_len))
+      dplyr::mutate(char_len = stringr::str_length(!!dplyr::sym(col))) %>%
+      dplyr::filter(char_len == max(char_len))
 
     min_char <- df %>%
-      dplyr::mutate(char_len = str_length(!!sym(col))) %>%
+      dplyr::mutate(char_len = stringr::str_length(!!dplyr::sym(col))) %>%
       dplyr::filter(char_len == min(char_len))
 
     max_char_n <- max_char %>%
@@ -59,10 +61,10 @@ explore_text_columns <- function(df, text_cols=list()) {
       unique()
 
     max_char_text <- max_char %>%
-      dplyr::pull(!!sym(col))
+      dplyr::pull(!!dplyr::sym(col))
 
     min_char_text <- min_char %>%
-      dplyr::pull(!!sym(col))
+      dplyr::pull(!!dplyr::sym(col))
 
     cat("- The longest text(s) has", max_char_n,"characters:\n")
     cat("\n")
@@ -94,8 +96,8 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("\n")
 
     results[[length(results)+1]] <- df %>%
-      dplyr::mutate(char_len = str_length(!!sym(col))) %>%
-      ggplot2::ggplot(aes(x=char_len)) +
+      dplyr::mutate(char_len = stringr::str_length(!!dplyr::sym(col))) %>%
+      ggplot2::ggplot(ggplot2::aes(x=char_len)) +
       ggplot2::geom_histogram(bins = 30) +
       ggplot2::theme_bw() +
       ggplot2::xlab(paste0("Number of characters in \"",col,"\""))
@@ -106,11 +108,11 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("### Word Count:")
     cat("\n")
     word_counts <- df %>%
-      dplyr::mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
+      dplyr::mutate(word_count = stringr::str_count(!!dplyr::sym(col), "\\w+")) %>%
       dplyr::pull(word_count)
 
     mean_word_count <- round(mean(word_counts), 2)
-    median_word_count <- round(median(word_counts), 2)
+    median_word_count <- round(stats::median(word_counts), 2)
 
     cat("- The average  number of words in \"",col,"\" is: ", mean_word_count, sep = "")
     cat("\n")
@@ -123,7 +125,7 @@ explore_text_columns <- function(df, text_cols=list()) {
     results <- append(results, median_word_count)
 
     max_words <- df %>%
-      dplyr::mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
+      dplyr::mutate(word_count = stringr::str_count(!!dplyr::sym(col), "\\w+")) %>%
       dplyr::filter(word_count == max(word_count))
 
     max_word_count <- max_words %>%
@@ -150,8 +152,8 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("#### Histogram of number of words in \"",col,"\":", sep = "")
     cat("\n")
     results[[length(results)+1]] <- df %>%
-      dplyr::mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
-      ggplot2::ggplot(aes(x=word_count)) +
+      dplyr::mutate(word_count = stringr::str_count(!!dplyr::sym(col), "\\w+")) %>%
+      ggplot2::ggplot(ggplot2::aes(x=word_count)) +
       ggplot2::geom_histogram(bins = 30) +
       ggplot2::theme_bw() +
       ggplot2::xlab(paste0("Number of words in \"",col,"\""))
@@ -164,7 +166,7 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("\n")
 
     text <- df %>%
-      dplyr::pull(!!sym(col))
+      dplyr::pull(!!dplyr::sym(col))
 
     corpus <- tm::Corpus(tm::VectorSource(text))
     docs <- corpus %>%
@@ -178,11 +180,11 @@ explore_text_columns <- function(df, text_cols=list()) {
     matrix <- as.matrix(dtm)
     words <- sort(rowSums(matrix),decreasing=TRUE)
 
-    word_cloud_df <- data.frame(word = names(words), freq=words) %>%
-      dplyr::arrange(desc(freq))
+    word_cloud_df <- data.frame(word = names(words), frequen=words) %>%
+      dplyr::arrange(dplyr::desc(frequen))
 
     set.seed(1)
-    wordcloud::wordcloud(words = word_cloud_df$word, freq = word_cloud_df$freq,
+    wordcloud::wordcloud(words = word_cloud_df$word, freq = word_cloud_df$frequen,
                          min.freq = 1,max.words=200,
                          random.order=FALSE, rot.per=0.35,
                          colors=RColorBrewer::brewer.pal(8, "Dark2"))
@@ -195,8 +197,8 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("\n")
 
     results[[length(results)+1]] <- word_cloud_df %>%
-      head(10) %>%
-      ggplot2::ggplot(aes(x=reorder(word, -freq), y=freq)) +
+      utils:: head(10) %>%
+      ggplot2::ggplot(ggplot2::aes(x=stats::reorder(word, -frequen), y=frequen)) +
       ggplot2::geom_bar(stat="identity") +
       ggplot2::theme_bw() +
       ggplot2::xlab(paste0("Words in \"",col,"\""))
@@ -217,11 +219,11 @@ explore_text_columns <- function(df, text_cols=list()) {
     matrix_bigram <- as.matrix(dtm_bigram)
     words_bigram <- sort(rowSums(matrix_bigram),decreasing=TRUE)
 
-    bigram_word_cloud_df <- data.frame(word = names(words_bigram),freq=words_bigram) %>%
-      dplyr::arrange(desc(freq))
+    bigram_word_cloud_df <- data.frame(word = names(words_bigram),frequen=words_bigram) %>%
+      dplyr::arrange(dplyr::desc(frequen))
 
     set.seed(1)
-    wordcloud::wordcloud(words = bigram_word_cloud_df$word, freq = bigram_word_cloud_df$freq,
+    wordcloud::wordcloud(words = bigram_word_cloud_df$word, freq = bigram_word_cloud_df$frequen,
               min.freq = 1,max.words=200,
               random.order=FALSE, rot.per=0.35,
               colors=RColorBrewer::brewer.pal(8, "Dark2"))
@@ -234,8 +236,8 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("\n")
 
     results[[length(results)+1]] <- bigram_word_cloud_df %>%
-      head(10) %>%
-      ggplot2::ggplot(aes(x=reorder(word, -freq), y=freq)) +
+      utils:: head(10) %>%
+      ggplot2::ggplot(ggplot2::aes(x=stats::reorder(word, -frequen), y=frequen)) +
       ggplot2::geom_bar(stat="identity") +
       ggplot2::theme_bw() +
       ggplot2::xlab(paste0("Bigrams in \"",col,"\""))
