@@ -32,5 +32,6 @@ test_that("multiplication works", {
   vdiffr::expect_doppelganger("Word_count_bar", results[[19]])
   expect_equal(results[[20]]$word[1:5], c('are you','i am','have a','you are','you have'))
   expect_equal(results[[20]]$freq[1:5], c(151, 133, 129, 123, 114))
+  vdiffr::expect_doppelganger("Bigram_count_bar", results[[21]])
 
 })

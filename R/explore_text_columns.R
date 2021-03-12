@@ -191,7 +191,7 @@ explore_text_columns <- function(df, text_cols=list()) {
 
     cat("\n")
     cat("\n")
-    cat("#### Bar chart of top 10 words (after removing stopwords) in \"",col,"\":", sep = "")
+    cat("#### Bar chart of top 10 words in \"",col,"\":", sep = "")
     cat("\n")
 
     results[[length(results)+1]] <- word_cloud_df %>%
@@ -227,6 +227,22 @@ explore_text_columns <- function(df, text_cols=list()) {
               colors=RColorBrewer::brewer.pal(8, "Dark2"))
 
     results[[length(results)+1]] <- bigram_word_cloud_df
+
+    cat("\n")
+    cat("\n")
+    cat("#### Bar chart of top 10 Bigrams in \"",col,"\":", sep = "")
+    cat("\n")
+
+    results[[length(results)+1]] <- bigram_word_cloud_df %>%
+      head(10) %>%
+      ggplot2::ggplot(aes(x=reorder(word, -freq), y=freq)) +
+      ggplot2::geom_bar(stat="identity") +
+      ggplot2::theme_bw() +
+      ggplot2::xlab(paste0("Bigrams in \"",col,"\""))
+
+    results[[length(results)]]
+    cat("\n")
+    cat("\n")
 
   }
 
