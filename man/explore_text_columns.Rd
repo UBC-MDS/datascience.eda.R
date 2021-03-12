@@ -2,7 +2,9 @@
 % Please edit documentation in R/explore_text_columns.R
 \name{explore_text_columns}
 \alias{explore_text_columns}
-\title{Performs EDA of text features
+\title{Performs EDA of text features. Works well with Rmarkdown.
+Its highly recommended to use code-chunk option results='asis'
+to make use of the markdown syntax
 \itemize{
 \item prints the summary statistics of character length
 \item plots the distribution of character length
@@ -11,18 +13,20 @@
 \item plots the word cloud
 }}
 \usage{
-explore_text_columns(df, text_cols = NULL)
+explore_text_columns(df, text_cols = vector(mode = "character"))
 }
 \arguments{
 \item{df}{dataframe: dataset}
 
-\item{text_cols}{vector of numeric column names}
+\item{text_cols}{vector of text column names}
 }
 \value{
-a list of plots
+a list of results and plots
 }
 \description{
-Performs EDA of text features
+Performs EDA of text features. Works well with Rmarkdown.
+Its highly recommended to use code-chunk option results='asis'
+to make use of the markdown syntax
 \itemize{
 \item prints the summary statistics of character length
 \item plots the distribution of character length
@@ -32,7 +36,5 @@ Performs EDA of text features
 }
 }
 \examples{
-\dontrun{
-explore_text_columns(df)
-}
+explore_text_columns(cars)
 }

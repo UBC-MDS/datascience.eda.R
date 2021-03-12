@@ -1,4 +1,6 @@
-#' Performs EDA of text features
+#' Performs EDA of text features. Works well with Rmarkdown.
+#' Its highly recommended to use code-chunk option results='asis'
+#' to make use of the markdown syntax
 #' - prints the summary statistics of character length
 #' - plots the distribution of character length
 #' - prints the summary statistics of word count
