@@ -1,7 +1,9 @@
 require(tidyverse)
 require(vdiffr)
 
-test_that("multiplication works", {
+test_that("explore_text_columns identifies the correct text features,
+          calculates summary statistics and generates the plots related
+          to text features accurately and handles exceptions gracefully", {
 
   df <- read_csv("data/spam.csv", locale(encoding = "latin1"),
                  col_names=c("target", "sms", "col3", "col4", "col5"),
