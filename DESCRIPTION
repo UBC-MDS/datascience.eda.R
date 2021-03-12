@@ -40,7 +40,6 @@ Imports:
     ggbiplot,
     ggplot2,
     palmerpenguins,
-    ggplot2,
     NLP,
     RColorBrewer,
     tidyverse,

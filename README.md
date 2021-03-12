@@ -1,8 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-datascience.eda
-===============
+# datascience.eda
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -21,8 +20,7 @@ similar packages published, a few good ones worth mentioning:
 -   [SmartEDA](https://cran.r-project.org/web/packages/SmartEDA/vignettes/SmartEDA.html)
 -   [DataExplorer](https://github.com/boxuancui/DataExplorer)
 
-Main functions
---------------
+## Main functions
 
 -   `explore_numeric_columns`: conducts common exploratory analysis on
     columns with numeric type: it generates a heatmap showing
@@ -62,24 +60,22 @@ Main functions
     the dataset and visualizes the clustering using scatterplots on PCA
     transformed data. It returns a list of plots.
 
-Installation
-------------
+## Installation
 
 You can install the development version of datascience.eda with:
 
-    # install.packages("devtools")
-    devtools::install_github("UBC-MDS/datascience.eda.R")
+``` r
+# install.packages("devtools")
+devtools::install_github("UBC-MDS/datascience.eda.R")
+```
 
-Example
--------
+## Example
 
 ``` r
 library(datascience.eda)
 library(palmerpenguins)
 
 explore_KMeans_clustering(penguins, centers = seq(3, 5))
-#> Warning: did not converge in 10 iterations
-
 #> Warning: did not converge in 10 iterations
 #> [[1]]
 ```
