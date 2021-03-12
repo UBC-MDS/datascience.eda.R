@@ -44,5 +44,7 @@ to make use of the markdown syntax
 }
 }
 \examples{
+library(sacred)
+explore_text_columns(apocrypha)
 explore_text_columns(cars)
 }

@@ -42,5 +42,7 @@ Imports:
     tm,
     wordcloud,
     vdiffr,
-    stringr
-    
+    stringr,
+    sacred (>= 0.1.0)
+Remotes:  
+    git@github.com:JohnCoene/sacred.git
