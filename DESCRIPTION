@@ -43,6 +43,8 @@ Imports:
     wordcloud,
     vdiffr,
     stringr,
-    sacred (>= 0.1.0)
+    sacred (>= 0.1.0),
+    purrr,
+    forcats
 Remotes:  
     git@github.com:JohnCoene/sacred.git

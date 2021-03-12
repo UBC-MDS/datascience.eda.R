@@ -2,23 +2,62 @@
 #'
 #' Creates a data frame containing column names and corresponding details about unique values, null values and most frequent category in every column
 #' Plots count-plots for given categorical columns
-#' Create a new factor from two existing factors, where the new factor's levels
-#' are the union of the levels of the input factors.
 #'
 #' @param df input data as a data frame
 #' @param categorical_col vector containing categorical columns
 #'
-#' @return A data frame with details about unique, null values and most frequent category in every column and a vector containing plots
+#' @return A list object with first list element being a tibble with details about unique, null values and most frequent category in every column
+#' and a second list element being count plots of user provided column names
 #' @export
+#'
 #' @examples
-#' \dontrun{
-#' explore_categorical_columns(X, c('col1', 'col2'))
-#' }
+#' explore_categorical_columns(data, c('column1', 'column2'))
 
+# exception if categorical_cols is not  passed as a char vector
+if (!is.character(categorical_cols)) {
+  stop("Provided column(s) is not a character vector")
+}
 
-explore_categorical_columns <- function(df, categorical_col) {
-  print('')
-  # A data frame with details about unique, null values and most frequent category in every column
+# exception if df passed is not a data.frame
+if (!is.data.frame(df)) {
+  stop("Provided data is not of type data.frame")
+}
 
-  # Plot objects
+for (col in categorical_cols){
+  # exception if a column name passed is not a column in the dataframe
+  if (!(col %in% colnames(df))){
+    stop(paste0(col, " passed in categorical_cols is not available in the dataframe"))
+  }
+  # exception if a column name passed is not of character datatype
+  if (!is.character(df %>% dplyr::pull(col))){
+    stop(paste0(col, " passed in categorical_cols does not belong to character data type"))
+  }
+}
+
+# Creating a function
+explore_categorical_columns <- function(df, categorical_cols){
+
+  plot_list <- list()
+
+  # Creating tibble
+  cat_df <- tibble(
+    column_name = categorical_cols,
+    unique_items = purrr::map_chr(as.vector(sapply(categorical_cols,
+                                                   function(x) (df[,x] %>% unique() %>% dplyr::pull()))),
+                                  toString),
+    no_of_nulls = apply(df, 2, function(col)sum(is.na(col))),
+    percentage_missing = apply(df, 2, function(col) round(sum(is.na(col))/length(col)*100,3)),
+  ) %>% dplyr::arrange(dplyr::desc(percentage_missing))
+
+  #Creating plots
+  for (col in seq_along(categorical_cols)){
+    plot_list[[col]]<- ggplot2::ggplot(df) +
+      ggplot2::aes(forcats::fct_infreq((!!sym(df[,col] %>% names())))) +
+      ggplot2::geom_bar(stat = 'count') +
+      ggplot2::xlab(categorical_cols[col]) +
+      ggplot2::theme(axis.text.x=element_text(angle=90))
+  }
+
+  # Returned list containing tibble and plots
+  cat_op <- list(cat_df, plot_list)
 }
