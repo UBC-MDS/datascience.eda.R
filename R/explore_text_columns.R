@@ -74,11 +74,10 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
         stop(paste0(col, " passed in text_cols is not a column in the dataframe"))
       }
       # exception if a column name passed is not of character datatype
-      if (!is.character(df)){
+      if (!is.character(df %>% pull(col))){
         stop(paste0(col, " passed in text_cols is not a column of character data type"))
       }
     }
-
   }
 
   results <- append(results, text_cols)
