@@ -30,5 +30,7 @@ test_that("multiplication works", {
   expect_equal(results[[18]]$word[1:5], c('call','now','can','get','will'))
   expect_equal(results[[18]]$freq[1:5], c(578, 479, 405, 390, 378))
   vdiffr::expect_doppelganger("Word_count_bar", results[[19]])
+  expect_equal(results[[20]]$word[1:5], c('are you','i am','have a','you are','you have'))
+  expect_equal(results[[20]]$freq[1:5], c(151, 133, 129, 123, 114))
 
 })

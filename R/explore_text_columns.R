@@ -205,6 +205,29 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("\n")
     cat("\n")
 
+    cat("#### Word Cloud of Bigrams in \"",col,"\":", sep = "")
+    cat("\n")
+
+    BigramTokenizer <- function(x) {
+      unlist(lapply(NLP::ngrams(NLP::words(x), 2), paste, collapse = " "), use.names = FALSE)
+    }
+
+    corpus <- tm::VCorpus(tm::VectorSource(text))
+    dtm_bigram <- tm::TermDocumentMatrix(corpus, control = list(tokenize = BigramTokenizer))
+    matrix_bigram <- as.matrix(dtm_bigram)
+    words_bigram <- sort(rowSums(matrix_bigram),decreasing=TRUE)
+
+    bigram_word_cloud_df <- data.frame(word = names(words_bigram),freq=words_bigram) %>%
+      dplyr::arrange(desc(freq))
+
+    set.seed(1)
+    wordcloud::wordcloud(words = bigram_word_cloud_df$word, freq = bigram_word_cloud_df$freq,
+              min.freq = 1,max.words=200,
+              random.order=FALSE, rot.per=0.35,
+              colors=RColorBrewer::brewer.pal(8, "Dark2"))
+
+    results[[length(results)+1]] <- bigram_word_cloud_df
+
   }
 
   results
