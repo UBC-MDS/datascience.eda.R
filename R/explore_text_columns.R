@@ -8,17 +8,50 @@
 #' @importFrom dplyr %>%
 #'
 #' @param df dataframe: dataset
-#' @param text_cols vector of numeric column names
+#' @param text_cols vector of text column names
 #'
 #' @return a list of results and plots
 #' @export
 #'
 #' @examples
 #' explore_text_columns(cars)
-explore_text_columns <- function(df, text_cols=list()) {
+explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
   results <- list()
   word_count <- frequen <- NULL
+
+  if (!is.character(text_cols)) {
+    stop("Pass optional parameter text_cols as a character vector")
+  }
+
+  if (!is.data.frame(df)) {
+    stop("The df passed is not a Data Frame")
+  }
+
+  if(length(text_cols) == 0) {
+    for (col in colnames(df %>% dplyr::select_if(is.character))){
+      if (df %>% dplyr::select(col) %>%
+          dplyr::n_distinct(col)/nrow(df) > 0.75){
+        if ((stats::median(df %>%
+                    dplyr::mutate(char_len = stringr::str_length(!!dplyr::sym(col))) %>%
+                    dplyr::pull(char_len))) > 5){
+          text_cols <- append(text_cols, col)
+        }
+      }
+    }
+    if(length(text_cols) == 0) {
+      stop("Could not identify any text column. Please pass the text column(s) when calling the function")
+    }
+    else {
+      cat("\n")
+      cat("\n")
+      cat("Identified the following as text columns:", text_cols)
+      cat("\n")
+      cat("\n")
+    }
+  }
+
+  results <- append(results, text_cols)
 
   for (col in text_cols){
 
