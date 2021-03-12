@@ -21,7 +21,8 @@ test_that("multiplication works", {
   expect_equal(results[[9]], ":)")
   expect_equal(results[[10]], "Ok")
   expect_equal(results[[11]], "Ok")
-
   vdiffr::expect_doppelganger("Character_Length_Plot", results[[12]])
+  expect_equal(results[[13]], 16.17)
+  expect_equal(results[[14]], 12)
 
 })

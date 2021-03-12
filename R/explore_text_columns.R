@@ -102,6 +102,26 @@ explore_text_columns <- function(df, text_cols=list()) {
 
     print(results[[length(results)]])
 
+    cat("\n\n")
+    cat("### Word Count:")
+    cat("\n")
+    word_counts <- df %>%
+      mutate(word_count = str_count(sms, "\\w+")) %>%
+      pull(word_count)
+
+    mean_word_count <- round(mean(word_counts), 2)
+    median_word_count <- round(median(word_counts), 2)
+
+    cat("- The average  number of words in \"",col,"\" is: ", mean_word_count, sep = "")
+    cat("\n")
+    cat("\n")
+    cat("- The median  number of words in \"",col,"\" is: ", median_word_count, sep = "")
+    cat("\n")
+    cat("\n")
+
+    results <- append(results, mean_word_count)
+    results <- append(results, median_word_count)
+
   }
 
   results
