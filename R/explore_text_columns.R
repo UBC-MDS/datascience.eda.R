@@ -106,7 +106,7 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("### Word Count:")
     cat("\n")
     word_counts <- df %>%
-      mutate(word_count = str_count(sms, "\\w+")) %>%
+      mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
       pull(word_count)
 
     mean_word_count <- round(mean(word_counts), 2)
@@ -121,6 +121,28 @@ explore_text_columns <- function(df, text_cols=list()) {
 
     results <- append(results, mean_word_count)
     results <- append(results, median_word_count)
+
+    max_words <- df %>%
+      mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
+      filter(word_count == max(word_count))
+
+    max_word_count <- max_words %>%
+      pull(word_count) %>%
+      unique()
+
+    max_word_text <- max_words %>%
+      pull(col)
+
+    cat("- The text(s) in \"",col,"\" with most words(",max_word_count,"):\n", sep = "")
+
+    for (word in max_word_text){
+      cat("\n")
+      cat(word)
+      cat("\n")
+    }
+
+    results <- append(results, max_word_count)
+    results <- append(results, max_word_text)
 
   }
 
