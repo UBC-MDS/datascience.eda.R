@@ -106,8 +106,8 @@ explore_text_columns <- function(df, text_cols=list()) {
     cat("### Word Count:")
     cat("\n")
     word_counts <- df %>%
-      mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
-      pull(word_count)
+      dplyr::mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
+      dplyr::pull(word_count)
 
     mean_word_count <- round(mean(word_counts), 2)
     median_word_count <- round(median(word_counts), 2)
@@ -123,15 +123,15 @@ explore_text_columns <- function(df, text_cols=list()) {
     results <- append(results, median_word_count)
 
     max_words <- df %>%
-      mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
-      filter(word_count == max(word_count))
+      dplyr::mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
+      dplyr::filter(word_count == max(word_count))
 
     max_word_count <- max_words %>%
-      pull(word_count) %>%
+      dplyr::pull(word_count) %>%
       unique()
 
     max_word_text <- max_words %>%
-      pull(col)
+      dplyr::pull(col)
 
     cat("- The text(s) in \"",col,"\" with most words(",max_word_count,"):\n", sep = "")
 
@@ -143,6 +143,20 @@ explore_text_columns <- function(df, text_cols=list()) {
 
     results <- append(results, max_word_count)
     results <- append(results, max_word_text)
+
+    cat("\n")
+    cat("\n")
+    cat("\n")
+    cat("#### Histogram of number of words in \"",col,"\":", sep = "")
+    cat("\n")
+    results[[length(results)+1]] <- df %>%
+      dplyr::mutate(word_count = str_count(!!sym(col), "\\w+")) %>%
+      ggplot2::ggplot(aes(x=word_count)) +
+      ggplot2::geom_histogram(bins = 30) +
+      ggplot2::theme_bw() +
+      ggplot2::xlab(paste0("Number of words in \"",col,"\""))
+
+    print(results[[length(results)]])
 
   }
 

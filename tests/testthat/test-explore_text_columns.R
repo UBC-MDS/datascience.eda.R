@@ -26,5 +26,6 @@ test_that("multiplication works", {
   expect_equal(results[[14]], 12)
   expect_equal(results[[15]], 190)
   expect_equal(results[[16]], df$sms[1086])
+  vdiffr::expect_doppelganger("Word_count_Plot", results[[17]])
 
 })
