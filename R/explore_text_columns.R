@@ -42,6 +42,54 @@ explore_text_columns <- function(df, text_cols=list()) {
     results <- append(results, mean_char_len)
     results <- append(results, median_char_len)
 
+    max_char <- df %>%
+      dplyr::mutate(char_len = str_length(!!sym(col))) %>%
+      filter(char_len == max(char_len))
+
+    min_char <- df %>%
+      dplyr::mutate(char_len = str_length(!!sym(col))) %>%
+      dplyr::filter(char_len == min(char_len))
+
+    max_char_n <- max_char %>%
+      dplyr::pull(char_len) %>%
+      unique()
+
+    min_char_n <- min_char %>%
+      dplyr::pull(char_len) %>%
+      unique()
+
+    max_char_text <- max_char %>%
+      dplyr::pull(!!sym(col))
+
+    min_char_text <- min_char %>%
+      dplyr::pull(!!sym(col))
+
+    cat("- The longest text(s) has", max_char_n,"characters:\n")
+    cat("\n")
+
+    for (word in max_char_text){
+      cat("\n")
+      cat(word)
+      cat("\n")
+    }
+
+    cat("\n")
+    cat("\n")
+    cat("- The shortest text(s) has(have)", min_char_n,"characters:\n")
+    cat("\n")
+
+    for (word in min_char_text){
+      cat("\n")
+      cat(word)
+      cat("\n")
+    }
+
+    results <- append(results, max_char_n)
+    results <- append(results, min_char_n)
+    results <- append(results, max_char_text)
+    results <- append(results, min_char_text)
+
+
   }
 
   results

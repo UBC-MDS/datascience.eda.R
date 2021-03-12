@@ -12,5 +12,16 @@ test_that("multiplication works", {
 
   expect_equal(results[[1]], 80.07)
   expect_equal(results[[2]], 61)
+  expect_equal(results[[3]], 910)
+  expect_equal(results[[4]], 2)
+  expect_equal(results[[5]], df$sms[1086])
+  expect_equal(results[[6]], "v2")
+  expect_equal(results[[7]], "Ok")
+  expect_equal(results[[8]], "Ok")
+  expect_equal(results[[9]], ":)")
+  expect_equal(results[[10]], "Ok")
+  expect_equal(results[[11]], "Ok")
+
+  vdiffr::expect_doppelganger("Character_Length_Plot", results[[12]])
 
 })
