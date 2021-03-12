@@ -1,11 +1,15 @@
 #' Performs EDA of text features. Works well with Rmarkdown.
 #' Its highly recommended to use code-chunk option results='asis'
 #' to make use of the markdown syntax
+#' - identifies text columns if not already specified
 #' - prints the summary statistics of character length
 #' - plots the distribution of character length
 #' - prints the summary statistics of word count
 #' - plots the distribution of word count
 #' - plots the word cloud
+#' - plots a bar plot of top 10 words
+#' - plot a word cloud of bigrams
+#' - plot a bar plot of top 10 bigrams
 #'
 #' @importFrom dplyr %>%
 #'

@@ -6,11 +6,15 @@
 Its highly recommended to use code-chunk option results='asis'
 to make use of the markdown syntax
 \itemize{
+\item identifies text columns if not already specified
 \item prints the summary statistics of character length
 \item plots the distribution of character length
 \item prints the summary statistics of word count
 \item plots the distribution of word count
 \item plots the word cloud
+\item plots a bar plot of top 10 words
+\item plot a word cloud of bigrams
+\item plot a bar plot of top 10 bigrams
 }}
 \usage{
 explore_text_columns(df, text_cols = vector(mode = "character"))
@@ -28,11 +32,15 @@ Performs EDA of text features. Works well with Rmarkdown.
 Its highly recommended to use code-chunk option results='asis'
 to make use of the markdown syntax
 \itemize{
+\item identifies text columns if not already specified
 \item prints the summary statistics of character length
 \item plots the distribution of character length
 \item prints the summary statistics of word count
 \item plots the distribution of word count
 \item plots the word cloud
+\item plots a bar plot of top 10 words
+\item plot a word cloud of bigrams
+\item plot a bar plot of top 10 bigrams
 }
 }
 \examples{
