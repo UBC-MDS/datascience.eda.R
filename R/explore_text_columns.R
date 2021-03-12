@@ -21,7 +21,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
   word_count <- frequen <- NULL
 
   if (!is.character(text_cols)) {
-    stop("Pass optional parameter text_cols as a character vector")
+    stop("text_cols is not passed as a character vector")
   }
 
   if (!is.data.frame(df)) {
@@ -40,7 +40,12 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
       }
     }
     if(length(text_cols) == 0) {
-      stop("Could not identify any text column. Please pass the text column(s) when calling the function")
+      cat("\n")
+      cat("\n")
+      cat("Could not identify any text column. Please pass the text column(s) when calling the function")
+      cat("\n")
+      cat("\n")
+      return(results)
     }
     else {
       cat("\n")
@@ -49,6 +54,16 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
       cat("\n")
       cat("\n")
     }
+  } else {
+    for (col in text_cols){
+      if (!(col %in% colnames(df))){
+        stop(paste0(col, " passed in text_cols is not a column in the dataframe"))
+      }
+      if (!is.character(df)){
+        stop(paste0(col, " passed in text_cols is not a column of character data type"))
+      }
+    }
+
   }
 
   results <- append(results, text_cols)
