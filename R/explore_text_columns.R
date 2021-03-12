@@ -26,14 +26,20 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
   results <- list()
   word_count <- frequen <- NULL
 
+  # exception if text_cols is not passed as a char vector
   if (!is.character(text_cols)) {
     stop("text_cols is not passed as a character vector")
   }
 
+  # exception if df passed is not a dataframe
   if (!is.data.frame(df)) {
     stop("The df passed is not a Data Frame")
   }
 
+  # if not specified by user, text columns are identified based on condition:
+  # 1. column has to be of character type
+  # 2. more than 75% of the entries have to be unique
+  # 3. median char length of the column > 5
   if(length(text_cols) == 0) {
     for (col in colnames(df %>% dplyr::select_if(is.character))){
       if (df %>% dplyr::select(col) %>%
@@ -45,6 +51,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
         }
       }
     }
+    # returns empty list if text cols are identified
     if(length(text_cols) == 0) {
       cat("\n")
       cat("\n")
@@ -62,9 +69,11 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
     }
   } else {
     for (col in text_cols){
+      # exception if a column name passed is not a column in the dataframe
       if (!(col %in% colnames(df))){
         stop(paste0(col, " passed in text_cols is not a column in the dataframe"))
       }
+      # exception if a column name passed is not of character datatype
       if (!is.character(df)){
         stop(paste0(col, " passed in text_cols is not a column of character data type"))
       }
@@ -74,10 +83,14 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
   results <- append(results, text_cols)
 
+  # loops through text_cols
   for (col in text_cols){
 
     cat("## Exploratory Data Analysis of \"",col,"\" column:", sep = "")
     cat("\n")
+
+    # print average, minimum, maximum and median character length of text
+    # show the shortest and longest text as well (number of characters)
     cat("### Character Length:")
     cat("\n")
 
@@ -145,6 +158,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
     results <- append(results, max_char_text)
     results <- append(results, min_char_text)
 
+    # plot a histogram of the length of text (number of characters)
     cat("\n")
     cat("#### Histogram of number of characters in \"",col,"\":", sep = "")
     cat("\n")
@@ -158,6 +172,8 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
     print(results[[length(results)]])
 
+    # print average, minimum, maximum and median number of words
+    # also show text with most number of words
     cat("\n\n")
     cat("### Word Count:")
     cat("\n")
@@ -200,6 +216,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
     results <- append(results, max_word_count)
     results <- append(results, max_word_text)
 
+    # plot a histogram of the number of words
     cat("\n")
     cat("\n")
     cat("\n")
@@ -214,6 +231,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
     print(results[[length(results)]])
 
+    # plot word cloud of text feature after removing stopwords
     cat("\n")
     cat("\n")
     cat("#### Word Cloud of text in \"",col,"\":", sep = "")
@@ -245,6 +263,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
     results[[length(results)+1]] <- word_cloud_df
 
+    # plot a barplot of top 10 words after removing stopwords
     cat("\n")
     cat("\n")
     cat("#### Bar chart of top 10 words in \"",col,"\":", sep = "")
@@ -259,9 +278,9 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
     print(results[[length(results)]])
 
+    # plot a wordcloud of bi-grams
     cat("\n")
     cat("\n")
-
     cat("#### Word Cloud of Bigrams in \"",col,"\":", sep = "")
     cat("\n")
 
@@ -285,6 +304,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
     results[[length(results)+1]] <- bigram_word_cloud_df
 
+    # plot a barplot of top 10 bi-grams after removing stopwords
     cat("\n")
     cat("\n")
     cat("#### Bar chart of top 10 Bigrams in \"",col,"\":", sep = "")
