@@ -121,18 +121,18 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
     for (word in max_char_text){
       cat("\n")
-      cat(word)
+      cat(paste0("\"",word,"\""))
       cat("\n")
     }
 
     cat("\n")
     cat("\n")
-    cat("- The shortest text(s) has(have)", min_char_n,"characters:\n")
+    cat("- The shortest text(s) has", min_char_n,"characters:\n")
     cat("\n")
 
     for (word in min_char_text){
       cat("\n")
-      cat(word)
+      cat(paste0("\"",word,"\""))
       cat("\n")
     }
 
@@ -185,11 +185,11 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
     max_word_text <- max_words %>%
       dplyr::pull(col)
 
-    cat("- The text(s) in \"",col,"\" with most words(",max_word_count,"):\n", sep = "")
+    cat("- The text(s) in \"",col,"\" with most words (",max_word_count," words):\n", sep = "")
 
     for (word in max_word_text){
       cat("\n")
-      cat(word)
+      cat(paste0("\"",word,"\""))
       cat("\n")
     }
 
@@ -212,7 +212,7 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
     cat("\n")
     cat("\n")
-    cat("#### Word Cloud of text (after removing stopwords) in \"",col,"\":", sep = "")
+    cat("#### Word Cloud of text in \"",col,"\":", sep = "")
     cat("\n")
 
     text <- df %>%
@@ -253,7 +253,8 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
       ggplot2::theme_bw() +
       ggplot2::xlab(paste0("Words in \"",col,"\""))
 
-    results[[length(results)]]
+    print(results[[length(results)]])
+
     cat("\n")
     cat("\n")
 
@@ -292,11 +293,15 @@ explore_text_columns <- function(df, text_cols=vector(mode='character')) {
       ggplot2::theme_bw() +
       ggplot2::xlab(paste0("Bigrams in \"",col,"\""))
 
-    results[[length(results)]]
-    cat("\n")
-    cat("\n")
+    print(results[[length(results)]])
 
+    cat("\n")
+    cat("\n")
   }
+
+  cat("**End of Exploratory Data Analysis of Text Columns**")
+  cat("\n")
+  cat("\n")
 
   results
 }

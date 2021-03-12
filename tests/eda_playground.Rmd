@@ -1,0 +1,28 @@
+---
+title: "EDA Playground"
+author: "Charles Suresh"
+date: "12/03/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(devtools)
+library(readr)
+load_all()
+```
+
+### Testing explore_text_columns function:
+
+```{r text_data_load, echo=FALSE, warning=FALSE, message=FALSE}
+text_df <- read_csv("testthat/data/spam.csv", locale(encoding = "latin1"),
+                 col_names=c("target", "sms", "col3", "col4", "col5"),
+                 col_types=NULL)
+```
+
+
+```{r pressure, echo=FALSE, results='asis', warning=FALSE}
+results <- explore_text_columns(text_df)
+```
+
+
