@@ -178,7 +178,8 @@ explore_text_columns <- function(df, text_cols=list()) {
     matrix <- as.matrix(dtm)
     words <- sort(rowSums(matrix),decreasing=TRUE)
 
-    word_cloud_df <- data.frame(word = names(words), freq=words)
+    word_cloud_df <- data.frame(word = names(words), freq=words) %>%
+      dplyr::arrange(desc(freq))
 
     set.seed(1)
     wordcloud::wordcloud(words = word_cloud_df$word, freq = word_cloud_df$freq,
@@ -187,6 +188,22 @@ explore_text_columns <- function(df, text_cols=list()) {
                          colors=RColorBrewer::brewer.pal(8, "Dark2"))
 
     results[[length(results)+1]] <- word_cloud_df
+
+    cat("\n")
+    cat("\n")
+    cat("#### Bar chart of top 10 words (after removing stopwords) in \"",col,"\":", sep = "")
+    cat("\n")
+
+    results[[length(results)+1]] <- word_cloud_df %>%
+      head(10) %>%
+      ggplot2::ggplot(aes(x=reorder(word, -freq), y=freq)) +
+      ggplot2::geom_bar(stat="identity") +
+      ggplot2::theme_bw() +
+      ggplot2::xlab(paste0("Words in \"",col,"\""))
+
+    results[[length(results)]]
+    cat("\n")
+    cat("\n")
 
   }
 
