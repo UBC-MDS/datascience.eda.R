@@ -4,38 +4,40 @@
 #' Plots count-plots for given categorical columns
 #'
 #' @param df input data as a data frame
-#' @param categorical_col vector containing categorical columns
+#' @param categorical_cols vector containing categorical columns
 #'
 #' @return A list object with first list element being a tibble with details about unique, null values and most frequent category in every column
 #' and a second list element being count plots of user provided column names
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' explore_categorical_columns(data, c('column1', 'column2'))
-
-# exception if categorical_cols is not  passed as a char vector
-if (!is.character(categorical_cols)) {
-  stop("Provided column(s) is not a character vector")
-}
-
-# exception if df passed is not a data.frame
-if (!is.data.frame(df)) {
-  stop("Provided data is not of type data.frame")
-}
-
-for (col in categorical_cols){
-  # exception if a column name passed is not a column in the dataframe
-  if (!(col %in% colnames(df))){
-    stop(paste0(col, " passed in categorical_cols is not available in the dataframe"))
-  }
-  # exception if a column name passed is not of character datatype
-  if (!is.character(df %>% dplyr::pull(col))){
-    stop(paste0(col, " passed in categorical_cols does not belong to character data type"))
-  }
-}
+#' }
 
 # Creating a function
 explore_categorical_columns <- function(df, categorical_cols){
+  
+  # exception if categorical_cols is not  passed as a char vector
+  if (!is.character(categorical_cols)) {
+    stop("Provided column(s) is not a character vector")
+  }
+
+  # exception if df passed is not a data.frame
+  if (!is.data.frame(df)) {
+    stop("Provided data is not of type data.frame")
+  }
+
+  for (col in categorical_cols){
+    # exception if a column name passed is not a column in the dataframe
+    if (!(col %in% colnames(df))){
+      stop(paste0(col, " passed in categorical_cols is not available in the dataframe"))
+    }
+    # exception if a column name passed is not of character datatype
+    if (!is.character(df %>% dplyr::pull(col))){
+      stop(paste0(col, " passed in categorical_cols does not belong to character data type"))
+    }
+  }
 
   plot_list <- list()
 
