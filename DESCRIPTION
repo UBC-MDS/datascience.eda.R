@@ -37,7 +37,7 @@ Imports:
     dplyr,
     imputeR,
     graphics,
-    ggbiplot,
+    ggbiplot (>= 0.55),
     ggplot2,
     palmerpenguins,
     NLP,
@@ -49,4 +49,5 @@ Imports:
     stringr,
     sacred (>= 0.1.0)
 Remotes:  
-    git@github.com:JohnCoene/sacred.git
+    git@github.com:JohnCoene/sacred.git,
+    git@github.com:vqv/ggbiplot.git
