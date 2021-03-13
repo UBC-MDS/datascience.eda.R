@@ -4,12 +4,10 @@
 \alias{explore_clustering}
 \title{fit and plot K-Means, DBScan clustering algorithm on the dataset}
 \usage{
-explore_clustering(df, numeric_cols = NULL, hyperparameter_dict = NULL)
+explore_clustering(df, hyperparameter_dict = NULL)
 }
 \arguments{
 \item{df}{dataframe}
-
-\item{numeric_cols}{vector of numeric columns' names, default is NULL, all numeric columns will be used}
 
 \item{hyperparameter_dict}{dictionary of hyperparameters to be used, default is NULL, a default set of hyperparameters will be used}
 }
@@ -20,7 +18,6 @@ a dictionary with each key = a clustering model name, value = list of plots gene
 fit and plot K-Means, DBScan clustering algorithm on the dataset
 }
 \examples{
-\dontrun{
-explore_clustering(df)
-}
+library(palmerpenguins)
+explore_clustering(penguins)
 }

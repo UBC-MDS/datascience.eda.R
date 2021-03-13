@@ -35,7 +35,11 @@ Imports:
     stats,
     dbscan,
     dplyr,
+    imputeR,
+    graphics,
+    ggbiplot (>= 0.55),
     ggplot2,
+    palmerpenguins,
     NLP,
     RColorBrewer,
     tidyverse,
@@ -46,5 +50,8 @@ Imports:
     sacred (>= 0.1.0),
     purrr,
     forcats
+    GGally,
+    reshape2
 Remotes:  
-    git@github.com:JohnCoene/sacred.git
+    git@github.com:JohnCoene/sacred.git,
+    git@github.com:vqv/ggbiplot.git

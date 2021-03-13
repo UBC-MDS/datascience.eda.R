@@ -4,24 +4,14 @@
 \alias{explore_DBSCAN_clustering}
 \title{fit and plot DBSCAN clustering on numeric columns of the dataset}
 \usage{
-explore_DBSCAN_clustering(
-  df,
-  num_cols = NULL,
-  eps = c(1),
-  minPts = c(5),
-  weights = NULL
-)
+explore_DBSCAN_clustering(df, eps = c(1), minPts = c(5))
 }
 \arguments{
 \item{df}{dataframe: dataset}
 
-\item{num_cols}{vector of numeric column names}
+\item{eps}{vector of the epsilon neighborhood size, optional, default to c(1)}
 
-\item{eps}{vector of the epsilon neighborhood size}
-
-\item{minPts}{vector of number of minimum points in the eps region (for core points). Default is c(5).}
-
-\item{weights}{number: weights for the data points. Only needed to perform weighted clustering.}
+\item{minPts}{vector of number of minimum points in the eps region (for core points), default to c(5).}
 }
 \value{
 a list of plots
@@ -30,7 +20,6 @@ a list of plots
 fit and plot DBSCAN clustering on numeric columns of the dataset
 }
 \examples{
-\dontrun{
-explore_DBSCAN_clustering(df)
-}
+library(palmerpenguins)
+explore_DBSCAN_clustering(penguins)
 }
