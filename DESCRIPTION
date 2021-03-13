@@ -47,7 +47,9 @@ Imports:
     wordcloud,
     vdiffr,
     stringr,
-    sacred (>= 0.1.0)
+    sacred (>= 0.1.0),
+    GGally,
+    reshape2
 Remotes:  
     git@github.com:JohnCoene/sacred.git,
     git@github.com:vqv/ggbiplot.git
