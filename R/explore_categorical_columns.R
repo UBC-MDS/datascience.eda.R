@@ -15,7 +15,6 @@
 #' explore_categorical_columns(data, c('column1', 'column2'))
 #' }
 
-# Creating a function
 explore_categorical_columns <- function(df, categorical_cols){
   
   # exception if categorical_cols is not  passed as a char vector
