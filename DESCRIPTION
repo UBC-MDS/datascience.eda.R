@@ -49,7 +49,7 @@ Imports:
     stringr,
     sacred (>= 0.1.0),
     purrr,
-    forcats
+    forcats,
     GGally,
     reshape2
 Remotes:  
