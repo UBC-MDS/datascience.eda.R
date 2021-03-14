@@ -51,7 +51,8 @@ Imports:
     purrr,
     forcats,
     GGally,
-    reshape2
+    reshape2,
+    tibble
 Remotes:  
     git@github.com:JohnCoene/sacred.git,
     git@github.com:vqv/ggbiplot.git

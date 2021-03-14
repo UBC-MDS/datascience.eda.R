@@ -39,9 +39,10 @@ explore_categorical_columns <- function(df, categorical_cols){
   }
 
   plot_list <- list()
+  percentage_missing <- NULL
 
   # Creating tibble
-  cat_df <- tibble(
+  cat_df <- tibble::tibble(
     column_name = categorical_cols,
     unique_items = purrr::map_chr(as.vector(sapply(categorical_cols,
                                                    function(x) (df[,x] %>% unique() %>% dplyr::pull()))),
@@ -53,10 +54,10 @@ explore_categorical_columns <- function(df, categorical_cols){
   #Creating plots
   for (col in seq_along(categorical_cols)){
     plot_list[[col]]<- ggplot2::ggplot(df) +
-      ggplot2::aes(forcats::fct_infreq((!!sym(df[,col] %>% names())))) +
+      ggplot2::aes(forcats::fct_infreq((!!dplyr::sym(df[,col] %>% names())))) +
       ggplot2::geom_bar(stat = 'count') +
       ggplot2::xlab(categorical_cols[col]) +
-      ggplot2::theme(axis.text.x=element_text(angle=90))
+      ggplot2::theme(axis.text.x=ggplot2::element_text(angle=90))
   }
 
   # Returned list containing tibble and plots
