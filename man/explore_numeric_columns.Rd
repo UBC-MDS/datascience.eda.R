@@ -27,6 +27,7 @@ a list of plot objects generated created by the function
 This function creates common exploratory analysis visualizations on numeric columns in the dataset which is provided to it.
 }
 \examples{
-library(palmerpenguins)
-explore_numeric_columns(penguins)
+\dontrun{
+explore_numeric_columns(df)
+}
 }
