@@ -75,8 +75,8 @@ devtools::install_github("UBC-MDS/datascience.eda.R")
 library(datascience.eda)
 library(palmerpenguins)
 
+# you can call each clustering algorithm separately 
 explore_KMeans_clustering(penguins, centers = seq(3, 5))
-#> Warning: did not converge in 10 iterations
 #> [[1]]
 ```
 
@@ -93,23 +93,12 @@ explore_KMeans_clustering(penguins, centers = seq(3, 5))
 <img src="man/figures/README-example-3.png" width="100%" />
 
 ``` r
-explore_DBSCAN_clustering(penguins, eps = c(3, 5), minPts = c(5, 10))
+explore_DBSCAN_clustering(penguins, eps = c(1), minPts = c(5))
 #> [[1]]
 ```
 
 <img src="man/figures/README-example-4.png" width="100%" />
 
-    #> 
-    #> [[2]]
-
-<img src="man/figures/README-example-5.png" width="100%" />
-
-    #> 
-    #> [[3]]
-
-<img src="man/figures/README-example-6.png" width="100%" />
-
-    #> 
-    #> [[4]]
-
-<img src="man/figures/README-example-7.png" width="100%" />
+``` r
+# OR you can just call explore_clustering(penguins) to apply both KMeans and DBSCAN at once
+```
