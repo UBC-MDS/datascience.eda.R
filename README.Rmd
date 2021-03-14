@@ -57,7 +57,6 @@ library(palmerpenguins)
 # you can call each clustering algorithm separately 
 explore_KMeans_clustering(penguins, centers = seq(3, 5))
 explore_DBSCAN_clustering(penguins, eps = c(1), minPts = c(5))
-explore_numeric_columns(penguins)
 
 # OR you can just call explore_clustering(penguins) to apply both KMeans and DBSCAN at once
 
