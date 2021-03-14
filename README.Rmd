@@ -56,5 +56,6 @@ library(palmerpenguins)
 
 explore_KMeans_clustering(penguins, centers = seq(3, 5))
 explore_DBSCAN_clustering(penguins, eps = c(3, 5), minPts = c(5, 10))
+explore_numeric_columns(penguins)
 
 ```
