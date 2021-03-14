@@ -11,9 +11,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' explore_categorical_columns(data, c('column1', 'column2'))
-#' }
+#' explore_categorical_columns(iris, c('Species'))
 
 explore_categorical_columns <- function(df, categorical_cols){
   
