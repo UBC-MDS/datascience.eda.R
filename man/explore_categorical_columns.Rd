@@ -4,24 +4,23 @@
 \alias{explore_categorical_columns}
 \title{Performs EDA of categorical features.}
 \usage{
-explore_categorical_columns(df, categorical_col)
+explore_categorical_columns(df, categorical_cols)
 }
 \arguments{
 \item{df}{input data as a data frame}
 
-\item{categorical_col}{vector containing categorical columns}
+\item{categorical_cols}{vector containing categorical columns}
 }
 \value{
-A data frame with details about unique, null values and most frequent category in every column and a vector containing plots
+A list object with first list element being a tibble with details about unique, null values and most frequent category in every column
+and a second list element being count plots of user provided column names
 }
 \description{
 Creates a data frame containing column names and corresponding details about unique values, null values and most frequent category in every column
 Plots count-plots for given categorical columns
-Create a new factor from two existing factors, where the new factor's levels
-are the union of the levels of the input factors.
 }
 \examples{
 \dontrun{
-explore_categorical_columns(X, c('col1', 'col2'))
+explore_categorical_columns(data, c('column1', 'column2'))
 }
 }

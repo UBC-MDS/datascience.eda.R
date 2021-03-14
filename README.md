@@ -31,11 +31,10 @@ similar packages published, a few good ones worth mentioning:
     on.
 
 -   `explore_categorical_columns`: performs exploratory analysis on
-    categorical features. It returns a dataframe containing column
+    categorical features. It returns a list having a tibble with column
     names, corresponding unique categories, counts of null values,
-    percentages of null values and most frequent categories. It also
-    generates and visualize countplots of a list of categorical columns
-    of choice.
+    percentages of null values and most frequent categories along with 
+    bar plots of user provided categorical columns.
 
 -   `explore_text_columns`: performs exploratory data analysis of text
     features. If text feature columns are not specified, the function
