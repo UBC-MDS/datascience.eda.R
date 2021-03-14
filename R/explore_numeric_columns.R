@@ -9,9 +9,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' explore_numeric_columns(df)
-#' }
+#' library(palmerpenguins)
+#' explore_numeric_columns(penguins)
 explore_numeric_columns <- function(df, hist_cols=NULL, pairplot_cols=NULL, corr_method='pearson'){
 
   if (!is.data.frame(df)){
