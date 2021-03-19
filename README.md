@@ -77,6 +77,9 @@ Example
 
     # you can call each clustering algorithm separately 
     explore_KMeans_clustering(penguins, centers = seq(3, 5))
+    #> Warning: did not converge in 10 iterations
+
+    #> Warning: did not converge in 10 iterations
     #> [[1]]
 
 <img src="man/figures/README-example-1.png" width="100%" />
@@ -99,6 +102,8 @@ Example
 
     # OR you can just call explore_clustering(penguins) to apply both KMeans and DBSCAN at once
 
+
+    # example for `explore_text_columns`
     library(sacred)
     results <- explore_text_columns(apocrypha)
 
