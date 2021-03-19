@@ -1,3 +1,5 @@
+#' Performs EDA of numeric features
+#'
 #' This function creates common exploratory analysis visualizations on numeric columns in the dataset which is provided to it.
 #'
 #' @param df The dataframe for which exploratory analysis is to be carried out

@@ -1,4 +1,6 @@
-#' Performs EDA of text features. Works well with Rmarkdown.
+#' Performs EDA of text features
+#'
+#' Works well with Rmarkdown.
 #' Its highly recommended to use code-chunk option results='asis'
 #' to make use of the markdown syntax
 #' - identifies text columns if not already specified
@@ -20,9 +22,7 @@
 #' @export
 #'
 #' @examples
-#' library(sacred)
-#' explore_text_columns(apocrypha)
-#' explore_text_columns(cars)
+#' results <- explore_text_columns(cars)
 explore_text_columns <- function(df, text_cols=vector(mode='character')) {
 
   results <- list()
