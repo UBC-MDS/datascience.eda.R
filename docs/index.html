@@ -105,13 +105,16 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
+<div id="explore_kmeans_clustering-and-explore_dbscan_clustering" class="section level3">
+<h3 class="hasAnchor">
+<a href="#explore_kmeans_clustering-and-explore_dbscan_clustering" class="anchor"></a><code>explore_KMeans_clustering</code> and <code>explore_DBSCAN_clustering</code>
+</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">library</span>(datascience.eda)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">library</span>(palmerpenguins)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co"># you can call each clustering algorithm separately </span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="kw">explore_KMeans_clustering</span>(penguins, <span class="dt">centers =</span> <span class="kw">seq</span>(<span class="dv">3</span>, <span class="dv">5</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="co">#&gt; Warning: did not converge in 10 iterations</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="co">#&gt; [[1]]</span></span></code></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="co">#&gt; [[1]]</span></span></code></pre></div>
 <p><img src="reference/figures/README-clustering_example-1.png" width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">#&gt; </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="co">#&gt; [[2]]</span></span></code></pre></div>
@@ -122,12 +125,16 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">explore_DBSCAN_clustering</span>(penguins, <span class="dt">eps =</span> <span class="kw">c</span>(<span class="dv">1</span>), <span class="dt">minPts =</span> <span class="kw">c</span>(<span class="dv">5</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="co">#&gt; [[1]]</span></span></code></pre></div>
 <p><img src="reference/figures/README-clustering_example-4.png" width="100%"></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># OR you can just call explore_clustering(penguins) to apply both KMeans and DBSCAN at once</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co"># example for `explore_text_columns`</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="kw">library</span>(sacred)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>results &lt;-<span class="st"> </span><span class="kw">explore_text_columns</span>(apocrypha)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># OR you can just call explore_clustering(penguins) to apply both KMeans and DBSCAN at once</span></span></code></pre></div>
+</div>
+<div id="explore_text_columns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#explore_text_columns" class="anchor"></a><code>explore_text_columns</code>
+</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">library</span>(sacred)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>results &lt;-<span class="st"> </span><span class="kw">explore_text_columns</span>(apocrypha)</span></code></pre></div>
 <p>Identified the following as text columns: text</p>
+</div>
 </div>
 <div id="exploratory-data-analysis-of-text-column" class="section level2">
 <h2 class="hasAnchor">

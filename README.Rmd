@@ -50,6 +50,8 @@ devtools::install_github("UBC-MDS/datascience.eda.R")
 ```
 ## Example
 
+### `explore_KMeans_clustering` and `explore_DBSCAN_clustering`
+
 ```{r clustering_example}
 library(datascience.eda)
 library(palmerpenguins)
@@ -62,9 +64,10 @@ explore_DBSCAN_clustering(penguins, eps = c(1), minPts = c(5))
 
 ```
 
+### `explore_text_columns`
 
 ```{r text_example, results='asis', warning=FALSE}
-# example for `explore_text_columns`
+
 library(sacred)
 results <- explore_text_columns(apocrypha)
 ```
