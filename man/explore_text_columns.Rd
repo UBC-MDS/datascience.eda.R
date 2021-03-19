@@ -30,6 +30,10 @@ to make use of the markdown syntax
 \item plot a bar plot of top 10 bigrams
 }
 }
+\details{
+Find a more detailed example
+\href{https://ubc-mds.github.io/datascience.eda.R/articles/explore_text_columns-vignette.html}{here}
+}
 \examples{
 results <- explore_text_columns(cars)
 }

@@ -1,8 +1,8 @@
 ---
-title: "datascience_eda_R-vignette"
+title: "EDA Text Column Example"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{datascience_eda_R-vignette}
+  %\VignetteIndexEntry{EDA Text Column Example}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,6 +14,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+### `explore_text_columns`:
+
+```{r setup, results='asis', warning=FALSE}
 library(datascience.eda)
+library(sacred)
+results <- explore_text_columns(apocrypha)
 ```

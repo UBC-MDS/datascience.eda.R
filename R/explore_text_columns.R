@@ -13,6 +13,10 @@
 #' - plot a word cloud of bigrams
 #' - plot a bar plot of top 10 bigrams
 #'
+#' Find a more detailed example
+#' [here](https://ubc-mds.github.io/datascience.eda.R/articles/explore_text_columns-vignette.html)
+#'
+#'
 #' @importFrom dplyr %>%
 #'
 #' @param df dataframe: dataset
