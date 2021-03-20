@@ -29,6 +29,7 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
+    covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 2
 Imports: 
@@ -53,6 +54,6 @@ Imports:
     GGally,
     reshape2,
     tibble
-Remotes:  
+Remotes: 
     git@github.com:JohnCoene/sacred.git,
     git@github.com:vqv/ggbiplot.git
