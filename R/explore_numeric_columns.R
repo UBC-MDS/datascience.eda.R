@@ -9,9 +9,8 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' explore_numeric_columns(df)
-#' }
+#' library(palmerpenguins)
+#' explore_numeric_columns(penguins)
 explore_numeric_columns <- function(df, hist_cols=NULL, pairplot_cols=NULL, corr_method='pearson'){
 
   if (!is.data.frame(df)){
@@ -78,7 +77,7 @@ explore_numeric_columns <- function(df, hist_cols=NULL, pairplot_cols=NULL, corr
   df_numeric_all <- dplyr::select_if(df, is.numeric)
   cormat <- round(stats::cor(df_numeric_all),3)
   cormat[upper.tri(cormat)] <- NA
-  melted_cormat <- reshape2::melt(cormat, na.rm = TRUE)
+  melted_cormat <- reshape2::melt(cormat, use='na.or.complete')
   corr_plot <- ggplot2::ggplot(data = melted_cormat, ggplot2::aes_string(x='Var1', y='Var2', fill='value')) +
     ggplot2::geom_tile() + ggplot2::scale_fill_gradient2(low = "blue", high = "red", mid = "white",
                                                          midpoint = 0, limit = c(-1,1), space = "Lab") +
