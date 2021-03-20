@@ -13,7 +13,7 @@
 #' @examples
 #' library(dplyr)
 #' library(MASS)
-#' explore_categorical_columns(survey %>% mutate(Sex = as.character('Sex'), Clap = as.character('Clap)) , c('Sex','Clap'))
+#' explore_categorical_columns(survey %>% mutate(Sex = as.character('Sex'), Clap = as.character('Clap')) , c('Sex','Clap'))
 
 explore_categorical_columns <- function(df, categorical_cols){
 
