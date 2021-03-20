@@ -19,8 +19,3 @@ and a second list element being count plots of user provided column names
 Creates a data frame containing column names and corresponding details about unique values, null values and most frequent category in every column
 Plots count-plots for given categorical columns
 }
-\examples{
-\dontrun{
-explore_categorical_columns(data, c('column1', 'column2'))
-}
-}

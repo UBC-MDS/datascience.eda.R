@@ -11,10 +11,12 @@
 #' @export
 #'
 #' @examples
-#' explore_categorical_columns(iris, c('Species'))
+#' library(dplyr)
+#' library(MASS)
+#' explore_categorical_columns(survey %>% mutate(Sex = as.character('Sex'), Clap = as.character('Clap')) , c('Sex','Clap'))
 
 explore_categorical_columns <- function(df, categorical_cols){
-  
+
   # exception if categorical_cols is not  passed as a char vector
   if (!is.character(categorical_cols)) {
     stop("Provided column(s) is not a character vector")
