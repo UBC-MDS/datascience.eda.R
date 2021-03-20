@@ -1,27 +1,23 @@
 Package: datascience.eda
 Title: Common Functions for EDA
-Version: 0.0.0.9000
+Version: 0.3.0
 Authors@R: 
     c(person(given = "Mai",
            family = "Le",
            role = "aut",
-           email = "lephanthuymai@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID")),
+           email = "lephanthuymai@gmail.com"),
     person(given = "Charles",
            family = "Suresh",
            role = c("aut", "cre"),
-           email = "emailcharlesjosh@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID")),
+           email = "emailcharlesjosh@gmail.com"),
     person(given = "Aditya",
        family = "Bhatraju",
        role = "aut",
-       email = "adityabns@outlook.com",
-       comment = c(ORCID = "YOUR-ORCID-ID")),
+       email = "adityabns@outlook.com"),
     person(given = "Rahul",
       family = "Kuriyedath",
       role = "aut",
-      email = "rahul.kuriyedath@gmail.com",
-      comment = c(ORCID = "YOUR-ORCID-ID")))
+      email = "rahul.kuriyedath@gmail.com"))
 Description: This package includes functions assisting data scientists with various common tasks during the exploratory data analysis stage of a data science project. Its functions will help the data scientist to do preliminary analysis on common column types like numeric columns, categorical columns and text columns; it will also conduct several experimental clusterings on the dataset.
 License: MIT + file LICENSE
 Encoding: UTF-8
