@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">datascience.eda</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -75,7 +75,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#datascienceeda" class="anchor"></a>datascience.eda</h1></div>
 <!-- badges: start -->
-<!-- badges: end -->
+
 <p>This package includes functions assisting data scientists with various common tasks during the exploratory data analysis stage of a data science project. Its functions will help the data scientist to do preliminary analysis on common column types like numeric columns, categorical columns and text columns; it will also conduct several experimental clusterings on the dataset.</p>
 <p>Our functions are tailored based on our own experience, there are also similar packages published, a few good ones worth mentioning:</p>
 <ul>
@@ -114,7 +114,8 @@
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co"># you can call each clustering algorithm separately </span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="kw">explore_KMeans_clustering</span>(penguins, <span class="dt">centers =</span> <span class="kw">seq</span>(<span class="dv">3</span>, <span class="dv">5</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="co">#&gt; [[1]]</span></span></code></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="co">#&gt; Warning: did not converge in 10 iterations</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="co">#&gt; [[1]]</span></span></code></pre></div>
 <p><img src="reference/figures/README-clustering_example-1.png" width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">#&gt; </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="co">#&gt; [[2]]</span></span></code></pre></div>
@@ -194,6 +195,51 @@
 <p><strong>End of Exploratory Data Analysis of Text Columns</strong></p>
 </div>
 </div>
+<div id="explore_numeric_columns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#explore_numeric_columns" class="anchor"></a><code>explore_numeric_columns</code>
+</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>results &lt;-<span class="st"> </span><span class="kw">explore_numeric_columns</span>(penguins)</span></code></pre></div>
+<p><img src="reference/figures/README-numeric_example-1.png" width="100%"><img src="reference/figures/README-numeric_example-2.png" width="100%"><img src="reference/figures/README-numeric_example-3.png" width="100%"><img src="reference/figures/README-numeric_example-4.png" width="100%"><img src="reference/figures/README-numeric_example-5.png" width="100%"><img src="reference/figures/README-numeric_example-6.png" width="100%"><img src="reference/figures/README-numeric_example-7.png" width="100%"></p>
+</div>
+<div id="explore_categorical_columns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#explore_categorical_columns" class="anchor"></a><code>explore_categorical_columns</code>
+</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="kw">library</span>(MASS)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">lapply</span>(survey[, <span class="kw">c</span>(<span class="st">'Sex'</span>,<span class="st">'Clap'</span>)], as.character),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>                 <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tibble</span>()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>results &lt;-<span class="st"> </span><span class="kw">explore_categorical_columns</span>(df, <span class="kw">c</span>(<span class="st">'Sex'</span>,<span class="st">'Clap'</span>))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>results[[<span class="dv">1</span>]] <span class="op">%&gt;%</span><span class="st"> </span>knitr<span class="op">::</span><span class="kw">kable</span>()</span></code></pre></div>
+<table class="table">
+<thead><tr class="header">
+<th align="left">column_name</th>
+<th align="left">unique_items</th>
+<th align="right">no_of_nulls</th>
+<th align="right">percentage_missing</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sex</td>
+<td align="left">Female, Male, NA</td>
+<td align="right">1</td>
+<td align="right">0.422</td>
+</tr>
+<tr class="even">
+<td align="left">Clap</td>
+<td align="left">Left, Neither, Right, NA</td>
+<td align="right">1</td>
+<td align="right">0.422</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>results[[<span class="dv">2</span>]][[<span class="dv">1</span>]]</span></code></pre></div>
+<p><img src="reference/figures/README-categorical_example-1.png" width="100%"></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>results[[<span class="dv">2</span>]][[<span class="dv">2</span>]]</span></code></pre></div>
+<p><img src="reference/figures/README-categorical_example-2.png" width="100%"></p>
+</div>
 </div>
 </div>
   </div>
@@ -216,14 +262,21 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Mai Le <br><small class="roles"> Author </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Charles Suresh <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Aditya Bhatraju <br><small class="roles"> Author </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Rahul Kuriyedath <br><small class="roles"> Author </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Mai Le <br><small class="roles"> Author </small>  </li>
+<li>Charles Suresh <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Aditya Bhatraju <br><small class="roles"> Author </small>  </li>
+<li>Rahul Kuriyedath <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://codecov.io/gh/UBC-MDS/datascience.eda.R"><img src="https://codecov.io/gh/UBC-MDS/datascience.eda.R/branch/main/graph/badge.svg?token=S73XLV3E83" alt="codecov"></a></li>
+<li><a href="https://github.com/UBC-MDS/datascience.eda.R/actions"><img src="https://github.com/UBC-MDS/datascience.eda.R/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
