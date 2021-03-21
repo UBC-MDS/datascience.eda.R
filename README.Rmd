@@ -73,3 +73,23 @@ explore_DBSCAN_clustering(penguins, eps = c(1), minPts = c(5))
 library(sacred)
 results <- explore_text_columns(apocrypha)
 ```
+
+### `explore_numeric_columns`
+
+```{r numeric_example}
+
+explore_numeric_columns(penguins)
+```
+
+
+### `explore_categorical_columns`
+
+```{r categorical_example}
+
+library(dplyr)
+library(MASS)
+df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
+                 stringsAsFactors=FALSE) %>% tibble()
+
+explore_categorical_columns(df, c('Sex','Clap'))
+```
