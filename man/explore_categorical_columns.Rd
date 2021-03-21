@@ -20,7 +20,7 @@ Creates a data frame containing column names and corresponding details about uni
 Plots count-plots for given categorical columns
 }
 \examples{
-\dontrun{
-explore_categorical_columns(data, c('column1', 'column2'))
-}
+library(dplyr)
+library(MASS)
+explore_categorical_columns(data.frame(lapply(survey[, c('Sex','Clap')], as.character), stringsAsFactors=FALSE) \%>\% tibble() , c('Sex','Clap'))
 }
