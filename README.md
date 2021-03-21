@@ -83,8 +83,6 @@ Example
     # you can call each clustering algorithm separately 
     explore_KMeans_clustering(penguins, centers = seq(3, 5))
     #> Warning: did not converge in 10 iterations
-
-    #> Warning: did not converge in 10 iterations
     #> [[1]]
 
 <img src="man/figures/README-clustering_example-1.png" width="100%" />
@@ -248,20 +246,17 @@ Amen.”
                      stringsAsFactors=FALSE) %>% tibble()
 
     results <- explore_categorical_columns(df, c('Sex','Clap'))
-    results
-    #> [[1]]
-    #> # A tibble: 2 x 4
-    #>   column_name unique_items             no_of_nulls percentage_missing
-    #>   <chr>       <chr>                          <int>              <dbl>
-    #> 1 Sex         Female, Male, NA                   1              0.422
-    #> 2 Clap        Left, Neither, Right, NA           1              0.422
-    #> 
-    #> [[2]]
-    #> [[2]][[1]]
+    results[[1]] %>% knitr::kable()
+
+| column\_name | unique\_items            | no\_of\_nulls | percentage\_missing |
+|:-------------|:-------------------------|--------------:|--------------------:|
+| Sex          | Female, Male, NA         |             1 |               0.422 |
+| Clap         | Left, Neither, Right, NA |             1 |               0.422 |
+
+    results[[2]][[1]]
 
 <img src="man/figures/README-categorical_example-1.png" width="100%" />
 
-    #> 
-    #> [[2]][[2]]
+    results[[2]][[2]]
 
 <img src="man/figures/README-categorical_example-2.png" width="100%" />

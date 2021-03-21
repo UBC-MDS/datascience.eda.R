@@ -92,5 +92,7 @@ df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
                  stringsAsFactors=FALSE) %>% tibble()
 
 results <- explore_categorical_columns(df, c('Sex','Clap'))
-results
+results[[1]] %>% knitr::kable()
+results[[2]][[1]]
+results[[2]][[2]]
 ```
