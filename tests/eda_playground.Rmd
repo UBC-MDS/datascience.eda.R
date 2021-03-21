@@ -25,4 +25,17 @@ text_df <- read_csv("testthat/data/spam.csv", locale(encoding = "latin1"),
 results <- explore_text_columns(text_df)
 ```
 
+```{r numeric_example, warning=FALSE, message=FALSE}
+library(palmerpenguins)
+results <- explore_numeric_columns(penguins)
+```
 
+```{r cat_example, warning=FALSE, message=FALSE}
+library(dplyr)
+library(MASS)
+df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
+                 stringsAsFactors=FALSE) %>% tibble()
+
+results <- explore_categorical_columns(df, c('Sex','Clap'))
+results
+```

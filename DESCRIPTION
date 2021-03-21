@@ -26,7 +26,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     testthat (>= 3.0.0),
-    knitr,
     rmarkdown,
     covr
 Config/testthat/edition: 2
@@ -52,7 +51,8 @@ Imports:
     GGally,
     reshape2,
     tibble,
-    MASS
+    MASS,
+    knitr
 Remotes: 
     git@github.com:JohnCoene/sacred.git,
     git@github.com:vqv/ggbiplot.git

@@ -1,4 +1,4 @@
-require(tidyverse)
+require(dplyr)
 require(vdiffr)
 
 test_that("explore_text_columns identifies the correct text features,
@@ -9,16 +9,16 @@ test_that("explore_text_columns identifies the correct text features,
                  col_names=c("target", "sms", "col3", "col4", "col5"),
                  col_types=NULL)
 
-  df <- df %>% select("target", "sms")
+  df <- df %>% dplyr::select("target", "sms")
   df$num <- c(1:nrow(df))
 
   expect_error(explore_text_columns(df, 5))
-  expect_error(explore_text_columns(df %>% pull(sms)))
+  expect_error(explore_text_columns(df %>% dplyr::pull(sms)))
   expect_error(explore_text_columns(df, 'random_column'))
   expect_error(explore_text_columns(df, 'num'))
   empty_char <- vector(mode='character')
-  expect_equal(length(explore_text_columns(df %>% select(target, num))), 0)
-  expect_true(is.list(explore_text_columns(df %>% select(target, num))))
+  expect_equal(length(explore_text_columns(df %>% dplyr::select("target"))), 0)
+  expect_true(is.list(explore_text_columns(df %>% dplyr::select("target", "sms"))))
   results <- explore_text_columns(df)
 
   expect_equal(results[[1]], "sms")

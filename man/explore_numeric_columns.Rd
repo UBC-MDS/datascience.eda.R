@@ -28,5 +28,5 @@ This function creates common exploratory analysis visualizations on numeric colu
 }
 \examples{
 library(palmerpenguins)
-explore_numeric_columns(penguins)
+results <- explore_numeric_columns(penguins)
 }
