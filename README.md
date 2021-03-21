@@ -1,8 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-datascience.eda
-===============
+datascience.eda.R
+=================
 
 <!-- badges: start -->
 
@@ -82,6 +82,8 @@ Example
 
     # you can call each clustering algorithm separately 
     explore_KMeans_clustering(penguins, centers = seq(3, 5))
+    #> Warning: did not converge in 10 iterations
+
     #> Warning: did not converge in 10 iterations
     #> [[1]]
 

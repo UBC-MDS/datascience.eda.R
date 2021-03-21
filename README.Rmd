@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# datascience.eda
+# datascience.eda.R
 
 <!-- badges: start -->
 [![codecov](https://codecov.io/gh/UBC-MDS/datascience.eda.R/branch/main/graph/badge.svg?token=S73XLV3E83)](https://codecov.io/gh/UBC-MDS/datascience.eda.R)
