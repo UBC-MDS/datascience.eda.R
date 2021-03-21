@@ -76,7 +76,7 @@ results <- explore_text_columns(apocrypha)
 
 ### `explore_numeric_columns`
 
-```{r numeric_example}
+```{r numeric_example, warning=FALSE, message=FALSE}
 
 explore_numeric_columns(penguins)
 ```
@@ -84,7 +84,7 @@ explore_numeric_columns(penguins)
 
 ### `explore_categorical_columns`
 
-```{r categorical_example}
+```{r categorical_example, warning=FALSE, message=FALSE}
 
 library(dplyr)
 library(MASS)

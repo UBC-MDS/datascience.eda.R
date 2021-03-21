@@ -233,81 +233,8 @@ Amen.”
 
 
     explore_numeric_columns(penguins)
-    #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    #> Warning: Removed 2 rows containing non-finite values (stat_bin).
 
-<img src="man/figures/README-numeric_example-1.png" width="100%" />
-
-    #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    #> Warning: Removed 2 rows containing non-finite values (stat_bin).
-
-<img src="man/figures/README-numeric_example-2.png" width="100%" />
-
-    #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    #> Warning: Removed 2 rows containing non-finite values (stat_bin).
-
-<img src="man/figures/README-numeric_example-3.png" width="100%" />
-
-    #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    #> Warning: Removed 2 rows containing non-finite values (stat_bin).
-
-<img src="man/figures/README-numeric_example-4.png" width="100%" />
-
-    #> `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    #> Registered S3 method overwritten by 'GGally':
-    #>   method from   
-    #>   +.gg   ggplot2
-
-<img src="man/figures/README-numeric_example-5.png" width="100%" />
-
-    #> Warning: Removed 2 rows containing non-finite values (stat_density).
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-    #> Warning: Removed 2 rows containing non-finite values (stat_density).
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-    #> Warning: Removed 2 rows containing non-finite values (stat_density).
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-    #> Warning: Removed 2 rows containing non-finite values (stat_density).
-    #> Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
-    #> Removed 2 rows containing missing values
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-
-    #> Warning: Removed 2 rows containing missing values (geom_point).
-
-<img src="man/figures/README-numeric_example-6.png" width="100%" /><img src="man/figures/README-numeric_example-7.png" width="100%" />
+<img src="man/figures/README-numeric_example-1.png" width="100%" /><img src="man/figures/README-numeric_example-2.png" width="100%" /><img src="man/figures/README-numeric_example-3.png" width="100%" /><img src="man/figures/README-numeric_example-4.png" width="100%" /><img src="man/figures/README-numeric_example-5.png" width="100%" /><img src="man/figures/README-numeric_example-6.png" width="100%" /><img src="man/figures/README-numeric_example-7.png" width="100%" />
 
     #> $hist
     #> $hist$data
@@ -399,7 +326,7 @@ Amen.”
     #>     super:  <ggproto object: Class FacetNull, Facet, gg>
     #> 
     #> $hist$plot_env
-    #> <environment: 0x7ff169652f30>
+    #> <environment: 0x7fea124aea00>
     #> 
     #> $hist$labels
     #> $hist$labels$title
@@ -504,7 +431,7 @@ Amen.”
     #>     super:  <ggproto object: Class FacetNull, Facet, gg>
     #> 
     #> $hist$plot_env
-    #> <environment: 0x7ff169652f30>
+    #> <environment: 0x7fea124aea00>
     #> 
     #> $hist$labels
     #> $hist$labels$title
@@ -609,7 +536,7 @@ Amen.”
     #>     super:  <ggproto object: Class FacetNull, Facet, gg>
     #> 
     #> $hist$plot_env
-    #> <environment: 0x7ff169652f30>
+    #> <environment: 0x7fea124aea00>
     #> 
     #> $hist$labels
     #> $hist$labels$title
@@ -714,7 +641,7 @@ Amen.”
     #>     super:  <ggproto object: Class FacetNull, Facet, gg>
     #> 
     #> $hist$plot_env
-    #> <environment: 0x7ff169652f30>
+    #> <environment: 0x7fea124aea00>
     #> 
     #> $hist$labels
     #> $hist$labels$title
@@ -819,7 +746,7 @@ Amen.”
     #>     super:  <ggproto object: Class FacetNull, Facet, gg>
     #> 
     #> $hist$plot_env
-    #> <environment: 0x7ff169652f30>
+    #> <environment: 0x7fea124aea00>
     #> 
     #> $hist$labels
     #> $hist$labels$title
@@ -1195,8 +1122,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b23b2720>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fea19f50a38>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1218,7 +1145,7 @@ Amen.”
     #>     }
     #>     p
     #> }
-    #> <bytecode: 0x7ff1b239e758>
+    #> <bytecode: 0x7fea19f586a8>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1244,8 +1171,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b23ecd90>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fea19f19e40>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1296,7 +1223,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1323,8 +1250,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b20c2f38>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fea19ee8110>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1375,7 +1302,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1402,8 +1329,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b2279390>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fea199bf480>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1454,7 +1381,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1481,8 +1408,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b24ac018>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fea19a307e8>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1533,7 +1460,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1560,8 +1487,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff168ff60b0>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fea1994fc18>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1574,7 +1501,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1601,8 +1528,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff168fbca40>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cffd9b30>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1624,7 +1551,7 @@ Amen.”
     #>     }
     #>     p
     #> }
-    #> <bytecode: 0x7ff1b239e758>
+    #> <bytecode: 0x7fea19f586a8>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1650,8 +1577,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4eda9b8>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cffb5a78>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1702,7 +1629,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1729,8 +1656,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4eb8218>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cff99468>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1781,7 +1708,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1808,8 +1735,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4e95b08>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cff74e20>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1860,7 +1787,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1887,8 +1814,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4e73fa0>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cff51eb8>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1901,7 +1828,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1928,8 +1855,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4e528b0>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cff2c500>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1942,7 +1869,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -1969,8 +1896,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4fea628>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cff03a30>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -1992,7 +1919,7 @@ Amen.”
     #>     }
     #>     p
     #> }
-    #> <bytecode: 0x7ff1b239e758>
+    #> <bytecode: 0x7fea19f586a8>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2018,8 +1945,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4fc85a8>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfedca30>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2070,7 +1997,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2097,8 +2024,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4f9f258>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfeb8910>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2149,7 +2076,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2176,8 +2103,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4f7b448>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfe942e8>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2190,7 +2117,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2217,8 +2144,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4f513d0>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfe645e0>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2231,7 +2158,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2258,8 +2185,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4acb008>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfe3c150>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2272,7 +2199,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2299,8 +2226,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1b4828158>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfe0a8c0>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2322,7 +2249,7 @@ Amen.”
     #>     }
     #>     p
     #> }
-    #> <bytecode: 0x7ff1b239e758>
+    #> <bytecode: 0x7fea19f586a8>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2348,8 +2275,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff195840e18>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfde09e8>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2400,7 +2327,7 @@ Amen.”
     #>             cor_txt
     #>         })
     #> }
-    #> <bytecode: 0x7ff1b26580f8>
+    #> <bytecode: 0x7fea19f26438>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2427,8 +2354,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1958b4368>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfdb0100>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2441,7 +2368,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2468,8 +2395,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff1959200f8>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfd84f08>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2482,7 +2409,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2509,8 +2436,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff195b2f1e0>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfd59a00>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2523,7 +2450,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2550,8 +2477,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff195afa478>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfd28600>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2564,7 +2491,7 @@ Amen.”
     #>     p <- ggplot(data = data, mapping = mapping) + geom_point(...)
     #>     p
     #> }
-    #> <bytecode: 0x7ff168ff49b8>
+    #> <bytecode: 0x7fea19932230>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2591,8 +2518,8 @@ Amen.”
     #>     allParams[names(argsList)] <- argsList
     #>     do.call(original_fn, allParams)
     #> }
-    #> <bytecode: 0x7ff1b2373c58>
-    #> <environment: 0x7ff195ac64b0>
+    #> <bytecode: 0x7fea19f652c0>
+    #> <environment: 0x7fe9cfce9e68>
     #> attr(,"class")
     #> [1] "ggmatrix_fn_with_params"
     #> attr(,"name")
@@ -2614,7 +2541,7 @@ Amen.”
     #>     }
     #>     p
     #> }
-    #> <bytecode: 0x7ff1b239e758>
+    #> <bytecode: 0x7fea19f586a8>
     #> <environment: namespace:GGally>
     #> 
     #> $mapping
@@ -2792,7 +2719,7 @@ Amen.”
     #>     super:  <ggproto object: Class FacetNull, Facet, gg>
     #> 
     #> $corr$plot_env
-    #> <environment: 0x7ff169652f30>
+    #> <environment: 0x7fea124aea00>
     #> 
     #> $corr$labels
     #> $corr$labels$title
@@ -2811,24 +2738,7 @@ Amen.”
 
 
     library(dplyr)
-    #> 
-    #> Attaching package: 'dplyr'
-    #> The following objects are masked from 'package:plyr':
-    #> 
-    #>     arrange, count, desc, failwith, id, mutate, rename, summarise,
-    #>     summarize
-    #> The following objects are masked from 'package:stats':
-    #> 
-    #>     filter, lag
-    #> The following objects are masked from 'package:base':
-    #> 
-    #>     intersect, setdiff, setequal, union
     library(MASS)
-    #> 
-    #> Attaching package: 'MASS'
-    #> The following object is masked from 'package:dplyr':
-    #> 
-    #>     select
     df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
                      stringsAsFactors=FALSE) %>% tibble()
 
