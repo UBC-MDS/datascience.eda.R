@@ -49,7 +49,8 @@ Imports:
     forcats,
     GGally,
     reshape2,
-    tibble
+    tibble,
+    MASS
 Remotes: 
     git@github.com:JohnCoene/sacred.git,
     git@github.com:vqv/ggbiplot.git

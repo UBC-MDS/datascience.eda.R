@@ -13,7 +13,7 @@
 #' @examples
 #' library(dplyr)
 #' library(MASS)
-#' explore_categorical_columns(survey %>% mutate(Sex = as.character('Sex'), Clap = as.character('Clap')) , c('Sex','Clap'))
+#' explore_categorical_columns(data.frame(lapply(survey[, c('Sex','Clap')], as.character), stringsAsFactors=FALSE) %>% tibble() , c('Sex','Clap'))
 
 explore_categorical_columns <- function(df, categorical_cols){
 
@@ -42,13 +42,14 @@ explore_categorical_columns <- function(df, categorical_cols){
   percentage_missing <- NULL
 
   # Creating tibble
+  unq_tbl <- tibble::tibble(unique_items = purrr::map_chr(as.vector(sapply(categorical_cols,
+                                                                   function(x) (df[, x] %>% unique()))), toString))
+
   cat_df <- tibble::tibble(
     column_name = categorical_cols,
-    unique_items = purrr::map_chr(as.vector(sapply(categorical_cols,
-                                                   function(x) (df[,x] %>% unique() %>% dplyr::pull()))),
-                                  toString),
-    no_of_nulls = apply(df, 2, function(col)sum(is.na(col))),
-    percentage_missing = apply(df, 2, function(col) round(sum(is.na(col))/length(col)*100,3)),
+    unique_items = unq_tbl$unique_items,
+    no_of_nulls = apply(df[ ,categorical_cols], 2, function(col) sum(is.na(col))),
+    percentage_missing = apply(df[ ,categorical_cols], 2, function(col) round(sum(is.na(col))/length(col)*100,3)),
   ) %>% dplyr::arrange(dplyr::desc(percentage_missing))
 
   #Creating plots

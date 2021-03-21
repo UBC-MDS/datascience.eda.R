@@ -19,3 +19,8 @@ and a second list element being count plots of user provided column names
 Creates a data frame containing column names and corresponding details about unique values, null values and most frequent category in every column
 Plots count-plots for given categorical columns
 }
+\examples{
+library(dplyr)
+library(MASS)
+explore_categorical_columns(data.frame(lapply(survey[, c('Sex','Clap')], as.character), stringsAsFactors=FALSE) \%>\% tibble() , c('Sex','Clap'))
+}
