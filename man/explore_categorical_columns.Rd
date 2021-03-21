@@ -23,7 +23,8 @@ Plots count-plots for given categorical columns
 library(dplyr)
 library(MASS)
 library(knitr)
-df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character), stringsAsFactors=FALSE) \%>\% tibble()
+df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
+stringsAsFactors=FALSE) \%>\% tibble()
 results <- explore_categorical_columns(df, c('Sex','Clap'))
 results[[1]] \%>\% knitr::kable()
 results[[2]][[1]]
