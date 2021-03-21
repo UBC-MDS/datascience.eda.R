@@ -1,0 +1,24 @@
+---
+title: "EDA Text Column Example"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{EDA Text Column Example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+### `explore_text_columns`:
+
+```{r setup, results='asis', warning=FALSE}
+library(datascience.eda)
+library(sacred)
+results <- explore_text_columns(apocrypha)
+```

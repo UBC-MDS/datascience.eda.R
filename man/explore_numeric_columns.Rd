@@ -2,7 +2,7 @@
 % Please edit documentation in R/explore_numeric_columns.R
 \name{explore_numeric_columns}
 \alias{explore_numeric_columns}
-\title{This function creates common exploratory analysis visualizations on numeric columns in the dataset which is provided to it.}
+\title{Performs EDA of numeric features}
 \usage{
 explore_numeric_columns(
   df,
@@ -28,5 +28,5 @@ This function creates common exploratory analysis visualizations on numeric colu
 }
 \examples{
 library(palmerpenguins)
-explore_numeric_columns(penguins)
+results <- explore_numeric_columns(penguins)
 }

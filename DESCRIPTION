@@ -25,8 +25,9 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    covr,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    rmarkdown,
+    covr
 Config/testthat/edition: 2
 Imports: 
     stats,
@@ -50,7 +51,9 @@ Imports:
     GGally,
     reshape2,
     tibble,
-    MASS
+    MASS,
+    knitr
 Remotes: 
     git@github.com:JohnCoene/sacred.git,
     git@github.com:vqv/ggbiplot.git
+VignetteBuilder: knitr

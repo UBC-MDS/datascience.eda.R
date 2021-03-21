@@ -2,20 +2,7 @@
 % Please edit documentation in R/explore_text_columns.R
 \name{explore_text_columns}
 \alias{explore_text_columns}
-\title{Performs EDA of text features. Works well with Rmarkdown.
-Its highly recommended to use code-chunk option results='asis'
-to make use of the markdown syntax
-\itemize{
-\item identifies text columns if not already specified
-\item prints the summary statistics of character length
-\item plots the distribution of character length
-\item prints the summary statistics of word count
-\item plots the distribution of word count
-\item plots the word cloud
-\item plots a bar plot of top 10 words
-\item plot a word cloud of bigrams
-\item plot a bar plot of top 10 bigrams
-}}
+\title{Performs EDA of text features}
 \usage{
 explore_text_columns(df, text_cols = vector(mode = "character"))
 }
@@ -28,7 +15,7 @@ explore_text_columns(df, text_cols = vector(mode = "character"))
 a list of results and plots
 }
 \description{
-Performs EDA of text features. Works well with Rmarkdown.
+Works well with Rmarkdown.
 Its highly recommended to use code-chunk option results='asis'
 to make use of the markdown syntax
 \itemize{
@@ -43,8 +30,10 @@ to make use of the markdown syntax
 \item plot a bar plot of top 10 bigrams
 }
 }
+\details{
+Find a more detailed example
+\href{https://ubc-mds.github.io/datascience.eda.R/articles/explore_text_columns-vignette.html}{here}
+}
 \examples{
-library(sacred)
-explore_text_columns(apocrypha)
-explore_text_columns(cars)
+results <- explore_text_columns(cars)
 }

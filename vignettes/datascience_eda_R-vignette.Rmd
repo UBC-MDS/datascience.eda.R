@@ -1,0 +1,66 @@
+---
+title: "Function Examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{datascience_eda_R-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+```{r setup}
+library(datascience.eda)
+```
+
+
+## `explore_KMeans_clustering` and `explore_DBSCAN_clustering`:
+
+```{r clustering_example}
+library(datascience.eda)
+library(palmerpenguins)
+
+# you can call each clustering algorithm separately 
+explore_KMeans_clustering(penguins, centers = seq(3, 5))
+explore_DBSCAN_clustering(penguins, eps = c(1), minPts = c(5))
+
+# OR you can just call explore_clustering(penguins) to apply both KMeans and DBSCAN at once
+
+```
+
+## `explore_text_columns`:
+
+```{r text_example, results='asis', warning=FALSE}
+
+library(sacred)
+results <- explore_text_columns(apocrypha)
+```
+
+## `explore_numeric_columns`:
+
+```{r numeric_example, warning=FALSE, message=FALSE}
+
+results <- explore_numeric_columns(penguins)
+```
+
+
+## `explore_categorical_columns`:
+
+```{r categorical_example, warning=FALSE, message=FALSE}
+
+library(dplyr)
+library(MASS)
+df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
+                 stringsAsFactors=FALSE) %>% tibble()
+
+results <- explore_categorical_columns(df, c('Sex','Clap'))
+results[[1]] %>% knitr::kable()
+results[[2]][[1]]
+results[[2]][[2]]
+```

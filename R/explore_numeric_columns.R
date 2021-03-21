@@ -1,3 +1,5 @@
+#' Performs EDA of numeric features
+#'
 #' This function creates common exploratory analysis visualizations on numeric columns in the dataset which is provided to it.
 #'
 #' @param df The dataframe for which exploratory analysis is to be carried out
@@ -10,7 +12,7 @@
 #'
 #' @examples
 #' library(palmerpenguins)
-#' explore_numeric_columns(penguins)
+#' results <- explore_numeric_columns(penguins)
 explore_numeric_columns <- function(df, hist_cols=NULL, pairplot_cols=NULL, corr_method='pearson'){
 
   if (!is.data.frame(df)){

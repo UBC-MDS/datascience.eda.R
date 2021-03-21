@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# datascience.eda
+# datascience.eda.R
 
 <!-- badges: start -->
 [![codecov](https://codecov.io/gh/UBC-MDS/datascience.eda.R/branch/main/graph/badge.svg?token=S73XLV3E83)](https://codecov.io/gh/UBC-MDS/datascience.eda.R)
@@ -52,7 +52,9 @@ devtools::install_github("UBC-MDS/datascience.eda.R")
 ```
 ## Example
 
-```{r example}
+### `explore_KMeans_clustering` and `explore_DBSCAN_clustering`
+
+```{r clustering_example}
 library(datascience.eda)
 library(palmerpenguins)
 
@@ -62,4 +64,35 @@ explore_DBSCAN_clustering(penguins, eps = c(1), minPts = c(5))
 
 # OR you can just call explore_clustering(penguins) to apply both KMeans and DBSCAN at once
 
+```
+
+### `explore_text_columns`
+
+```{r text_example, results='asis', warning=FALSE}
+
+library(sacred)
+results <- explore_text_columns(apocrypha)
+```
+
+### `explore_numeric_columns`
+
+```{r numeric_example, warning=FALSE, message=FALSE}
+
+results <- explore_numeric_columns(penguins)
+```
+
+
+### `explore_categorical_columns`
+
+```{r categorical_example, warning=FALSE, message=FALSE}
+
+library(dplyr)
+library(MASS)
+df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
+                 stringsAsFactors=FALSE) %>% tibble()
+
+results <- explore_categorical_columns(df, c('Sex','Clap'))
+results[[1]] %>% knitr::kable()
+results[[2]][[1]]
+results[[2]][[2]]
 ```

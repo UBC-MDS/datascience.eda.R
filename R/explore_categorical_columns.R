@@ -13,8 +13,13 @@
 #' @examples
 #' library(dplyr)
 #' library(MASS)
-#' explore_categorical_columns(data.frame(lapply(survey[, c('Sex','Clap')], as.character), 
-#' stringsAsFactors=FALSE) %>% tibble() , c('Sex','Clap'))
+#' library(knitr)
+#' df <- data.frame(lapply(survey[, c('Sex','Clap')], as.character),
+#' stringsAsFactors=FALSE) %>% tibble()
+#' results <- explore_categorical_columns(df, c('Sex','Clap'))
+#' results[[1]] %>% knitr::kable()
+#' results[[2]][[1]]
+#' results[[2]][[2]]
 
 explore_categorical_columns <- function(df, categorical_cols){
 
